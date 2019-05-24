@@ -1,4 +1,4 @@
-# DataLakeInADay
+# Data Lake in a Day
 
 ## Introduction
 This repository contains workshops and content for the data lake in a day engagement. While this is designed around the classroom and MTC, there is no reason you shouldn't work through the demos yourself at any time to gain an understanding of the platform.
