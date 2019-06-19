@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminPassword": {
+      "type": "securestring"
+    }
+  },
+  "variables": {},
+    "resources": [
+      {
+        "name": "vnet01",
+        "type": "Microsoft.Network/virtualNetworks",
+        "location": "[resourceGroup().location]",
+        "apiVersion": "2016-03-30",
+        "dependsOn": [ ],
+        "tags": {
+          "displayName": "vnet01"
+        },
+        "properties": {
+          "addressSpace": {
+            "addressPrefixes": [
+              "192.168.1.0/24"
+            ]
+          },
+          "subnets": [
+            {
+              "name": "subnet01",
+              "properties": {
+                "addressPrefix": "192.168.1.0/24"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "sql01",
+        "type": "Microsoft.Sql/servers",
+        "location": "[resourceGroup().location]",
+        "apiVersion": "2014-04-01-preview",
+        "dependsOn": [ ],
+        "tags": {
+          "displayName": "sql01"
+        },
+        "properties": {
+          "administratorLogin": "demogod",
+          "administratorLoginPassword": "[parameters('adminPassword')]"
+        },
+        "resources": [
+          {
+            "name": "AllowAllWindowsAzureIps",
+            "type": "firewallrules",
+            "location": "[resourceGroup().location]",
+            "apiVersion": "2014-04-01-preview",
+            "dependsOn": [
+              "[resourceId('Microsoft.Sql/servers', variables('sql01Name'))]"
+            ],
+            "properties": {
+              "startIpAddress": "0.0.0.0",
+              "endIpAddress": "0.0.0.0"
+            }
+          }
+        ]
+      }],
+    "outputs": {}
+  }

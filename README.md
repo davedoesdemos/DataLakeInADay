@@ -12,6 +12,7 @@ The below image shows an overview of the platform components we will be using du
 
 * [Session 1 - Data Platform Overview and Options](Session1/Session1.md)
 * [Session 2 - Organising a Data Lake](Session2/Session2.md)
+* [Session 3 - The Wider Ecosystem](Session3/Session3.md)
 
 # Labs
 
