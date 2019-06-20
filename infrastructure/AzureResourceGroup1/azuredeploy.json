@@ -6,7 +6,12 @@
       "type": "securestring"
     }
   },
-  "variables": {},
+  "variables": {
+    "sqlservername": "[concat('sql', uniqueString(resourceGroup().id))]",
+    "irservername": "[concat('ir', uniqueString(resourceGroup().id))]",
+    "datastorename": "[concat('datastore', uniqueString(resourceGroup().id))]",
+    "adfname": "[concat('adf', uniqueString(resourceGroup().id))]"
+  },
   "resources": [
     {
       "type": "Microsoft.Network/networkSecurityGroups",
@@ -155,7 +160,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2018-10-01",
-      "name": "ir01",
+      "name": "[variables('irservername')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', 'ir01_NIC')]",
@@ -179,7 +184,7 @@
           "dataDisks": []
         },
         "osProfile": {
-          "computerName": "ir01",
+          "computerName": "[[variables('irservername')]",
           "adminUsername": "demogod",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
@@ -201,7 +206,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2018-10-01",
-      "name": "sql01",
+      "name": "[variables('sqlservername')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', 'sql01_NIC')]",
@@ -231,7 +236,7 @@
           ]
         },
         "osProfile": {
-          "computerName": "sql01",
+          "computerName": "[variables('sqlservername')]",
           "adminUsername": "demogod",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
@@ -251,12 +256,12 @@
       }
     },
     {
-      "name": "sql01",
+      "name": "[variables('sqlservername')]",
       "type": "Microsoft.SqlVirtualMachine/SqlVirtualMachines",
       "apiVersion": "2017-03-01-preview",
       "location": "[resourceGroup().location]",
       "properties": {
-        "virtualMachineResourceId": "[resourceId('Microsoft.Compute/virtualMachines', 'sql01')]",
+        "virtualMachineResourceId": "[resourceId('Microsoft.Compute/virtualMachines', variables('sqlservername'))]",
         "sqlManagement": "Full",
         "SqlServerLicenseType": "PAYG",
         "ServerConfigurationsManagementSettings": {
@@ -280,11 +285,11 @@
         }
       },
       "dependsOn": [
-        "[resourceId('Microsoft.Compute/virtualMachines', 'sql01')]"
+        "[resourceId('Microsoft.Compute/virtualMachines', variables('sqlservername'))]"
       ]
     },
     {
-      "name": "[concat('dataStore', uniqueString(resourceGroup().id))]",
+      "name": "[variables('datastorename')]",
       "apiVersion": "2018-07-01",
       "type": "Microsoft.Storage/storageAccounts",
       "sku": {
@@ -296,10 +301,22 @@
         {
           "type": "blobServices",
           "name": "default",
-          "apiVersion": "2018-07-01"
+          "apiVersion": "2018-07-01",
+          "dependsOn": [
+            "[resourceId('Microsoft.Storage/storageAccounts', variables('datastorename'))]"
+          ]
         }
       ]
+    },
+    {
+      "name": "[variables('adfname')]",
+      "apiVersion": "2018-06-01",
+      "type": "Microsoft.DataFactory/factories",
+      "location": "[resourceGroup().location]",
+      "identity": {
+        "type": "SystemAssigned"
+      }
     }
   ],
-    "outputs": {}
-  }
+      "outputs": {}
+    }
