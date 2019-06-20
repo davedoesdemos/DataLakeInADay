@@ -674,8 +674,6 @@
           "appliedDnsServers": [],
           "internalDomainNameSuffix": "52xypdrpgb3unez1fnlspbhroa.bx.internal.cloudapp.net"
         },
-        "macAddress": "00-0D-3A-14-27-29",
-        "enableAcceleratedNetworking": false,
         "enableIPForwarding": false,
         "networkSecurityGroup": {
           "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_IR01_nsg_name'))]"
@@ -722,7 +720,6 @@
           "internalDomainNameSuffix": "52xypdrpgb3unez1fnlspbhroa.bx.internal.cloudapp.net"
         },
         "macAddress": "00-0D-3A-4F-72-2A",
-        "enableAcceleratedNetworking": false,
         "enableIPForwarding": false,
         "networkSecurityGroup": {
           "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_SQL01_nsg_name'))]"

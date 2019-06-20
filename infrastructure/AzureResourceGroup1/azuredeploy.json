@@ -223,7 +223,6 @@
           }
         ]
       },
-      "enableAcceleratedNetworking": false,
       "enableIPForwarding": false,
       "networkSecurityGroup": {
         "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
@@ -259,7 +258,6 @@
           }
         ]
         },
-        "enableAcceleratedNetworking": false,
         "enableIPForwarding": false,
         "networkSecurityGroup": {
           "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
