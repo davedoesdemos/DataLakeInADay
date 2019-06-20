@@ -181,6 +181,7 @@
         "osProfile": {
           "computerName": "ir01",
           "adminUsername": "demogod",
+          "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
             "provisionVMAgent": true,
             "enableAutomaticUpdates": true
