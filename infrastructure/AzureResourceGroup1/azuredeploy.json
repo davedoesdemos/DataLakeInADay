@@ -214,7 +214,7 @@
       ],
       "properties": {
         "hardwareProfile": {
-          "vmSize": "Standard_A2_v2"
+          "vmSize": "Standard_D2_v3"
         },
         "storageProfile": {
           "imageReference": {
