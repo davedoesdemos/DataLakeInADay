@@ -282,6 +282,23 @@
       "dependsOn": [
         "[resourceId('Microsoft.Compute/virtualMachines', 'sql01')]"
       ]
+    },
+    {
+      "name": "[concat('dataStore', uniqueString(resourceGroup().id))]",
+      "apiVersion": "2018-07-01",
+      "type": "Microsoft.Storage/storageAccounts",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "location": "[resourceGroup().location]",
+      "kind": "StorageV2",
+      "resources": [
+        {
+          "type": "Microsoft.Storage/storageAccounts/blobServices",
+          "name": "default",
+          "apiVersion": "2018-07-01",
+        }
+      ]
     }
   ],
     "outputs": {}
