@@ -168,14 +168,7 @@
             "version": "latest"
           },
           "osDisk": {
-            "osType": "Windows",
-            "name": "[concat('ir01', '_OsDisk_1_e872a67f61514b3699e772ece68c85a6')]",
             "createOption": "FromImage",
-            "caching": "ReadWrite",
-            "managedDisk": {
-              "storageAccountType": "Premium_LRS",
-              "id": "[resourceId('Microsoft.Compute/disks', concat('ir01', '_OsDisk_1_e872a67f61514b3699e772ece68c85a6'))]"
-            },
             "diskSizeGB": 127
           },
           "dataDisks": []
