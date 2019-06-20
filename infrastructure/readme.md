@@ -1,3 +1,3 @@
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https://github.com/davedoesdemos/DataLakeInADay/blob/master/infrastructure/AzureResourceGroup1/azuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdavedoesdemos%2FDataLakeInADay%2Fmaster%2Finfrastructure%2FAzureResourceGroup1%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
     </a>
