@@ -12,7 +12,7 @@
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2019-04-01",
       "name": "nsg01",
-      "location": "eastus",
+      "location": "[resourceGroup().location]",
       "properties": {
         "securityRules": [
           {
@@ -40,7 +40,10 @@
       "type": "Microsoft.sql/servers",
       "location": "[resourceGroup().location]",
       "apiVersion": "2014-04-01-preview",
-      "dependsOn": [],
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkInterfaces', 'sql01_NIC')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')]"
+      ],
       "tags": {
         "displayName": "sql01"
       },
@@ -68,7 +71,7 @@
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2019-04-01",
       "name": "ir01_IP",
-      "location": "eastus",
+      "location": "[resourceGroup().location]",
       "sku": {
         "name": "Basic",
         "tier": "Regional"
@@ -84,7 +87,7 @@
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2019-04-01",
       "name": "sql01_IP",
-      "location": "eastus",
+      "location": "[resourceGroup().location]",
       "sku": {
         "name": "Basic",
         "tier": "Regional"
@@ -148,9 +151,10 @@
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2018-10-01",
       "name": "ir01",
-      "location": "eastus",
+      "location": "[resourceGroup().location]",
       "dependsOn": [
-        "[resourceId('Microsoft.Network/networkInterfaces', 'ir01_NIC')]"
+        "[resourceId('Microsoft.Network/networkInterfaces', 'ir01_NIC')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')]"
       ],
       "properties": {
         "hardwareProfile": {
@@ -198,7 +202,7 @@
     {
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2019-04-01",
-      "location": "eastus",
+      "location": "[resourceGroup().location]",
       "name": "sql01_NIC",
       "dependsOn": [
         "[resourceId('Microsoft.Network/publicIPAddresses', 'sql01_IP')]",
@@ -228,7 +232,7 @@
     {
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2019-04-01",
-      "location": "eastus",
+      "location": "[resourceGroup().location]",
       "name": "ir01_NIC",
       "dependsOn": [
         "[resourceId('Microsoft.Network/publicIPAddresses','ir01_IP')]",
