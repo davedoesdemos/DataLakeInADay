@@ -36,70 +36,6 @@
       }
     },
     {
-      "name": "sql01",
-      "type": "Microsoft.sql/servers",
-      "location": "[resourceGroup().location]",
-      "apiVersion": "2014-04-01-preview",
-      "dependsOn": [
-        "[resourceId('Microsoft.Network/networkInterfaces', 'sql01_NIC')]",
-        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')]"
-      ],
-      "tags": {
-        "displayName": "sql01"
-      },
-      "properties": {
-        "administratorLogin": "demogod",
-        "administratorLoginPassword": "[parameters('adminPassword')]"
-      },
-      "resources": [
-        {
-          "name": "AllowAllWindowsAzureIps",
-          "type": "firewallrules",
-          "location": "[resourceGroup().location]",
-          "apiVersion": "2014-04-01-preview",
-          "dependsOn": [
-            "[resourceId('Microsoft.sql/servers', 'sql01')]"
-          ],
-          "properties": {
-            "startIpAddress": "0.0.0.0",
-            "endIpAddress": "0.0.0.0"
-          }
-        }
-      ]
-    },
-    {
-      "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2019-04-01",
-      "name": "ir01_IP",
-      "location": "[resourceGroup().location]",
-      "sku": {
-        "name": "Basic",
-        "tier": "Regional"
-      },
-      "properties": {
-        "publicIPAddressVersion": "IPv4",
-        "publicIPAllocationMethod": "Dynamic",
-        "idleTimeoutInMinutes": 4,
-        "ipTags": []
-      }
-    },
-    {
-      "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2019-04-01",
-      "name": "sql01_IP",
-      "location": "[resourceGroup().location]",
-      "sku": {
-        "name": "Basic",
-        "tier": "Regional"
-      },
-      "properties": {
-        "publicIPAddressVersion": "IPv4",
-        "publicIPAllocationMethod": "Dynamic",
-        "idleTimeoutInMinutes": 4,
-        "ipTags": []
-      }
-    },
-    {
       "name": "vnet01",
       "type": "Microsoft.Network/virtualNetworks",
       "location": "[resourceGroup().location]",
@@ -125,26 +61,95 @@
       }
     },
     {
-      "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+      "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2019-04-01",
-      "name": "nsg01, '/RDP')]",
+      "name": "ir01_IP",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Basic",
+        "tier": "Regional"
+      },
+      "properties": {
+        "publicIPAddressVersion": "IPv4",
+        "publicIPAllocationMethod": "Dynamic",
+        "idleTimeoutInMinutes": 4,
+        "ipTags": []
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2019-04-01",
+      "location": "[resourceGroup().location]",
+      "name": "ir01_NIC",
       "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses','ir01_IP')]",
+        "[resourceId('Microsoft.Network/virtualNetworks','vnet01')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups','nsg01')]"
+      ],
+      "properties": {
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups','nsg01')]"
+        },
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'ir01_IP')]"
+              },
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet01', 'subnet01')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/publicIPAddresses",
+      "apiVersion": "2019-04-01",
+      "name": "sql01_IP",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Basic",
+        "tier": "Regional"
+      },
+      "properties": {
+        "publicIPAddressVersion": "IPv4",
+        "publicIPAllocationMethod": "Dynamic",
+        "idleTimeoutInMinutes": 4,
+        "ipTags": []
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2019-04-01",
+      "location": "[resourceGroup().location]",
+      "name": "sql01_NIC",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', 'sql01_IP')]",
+        "[resourceId('Microsoft.Network/virtualNetworks', 'vnet01')]",
         "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')]"
       ],
       "properties": {
-        "provisioningState": "Succeeded",
-        "protocol": "TCP",
-        "sourcePortRange": "*",
-        "destinationPortRange": "3389",
-        "sourceAddressPrefix": "*",
-        "destinationAddressPrefix": "*",
-        "access": "Allow",
-        "priority": 300,
-        "direction": "Inbound",
-        "sourcePortRanges": [],
-        "destinationPortRanges": [],
-        "sourceAddressPrefixes": [],
-        "destinationAddressPrefixes": []
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups','nsg01')]"
+        },
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses','sql01_IP')]"
+              },
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets','vnet01', 'subnet01')]"
+              }
+            }
+          }
+        ]
       }
     },
     {
@@ -193,64 +198,36 @@
       }
     },
     {
-      "type": "Microsoft.Network/networkInterfaces",
-      "apiVersion": "2019-04-01",
+      "name": "sql01",
+      "type": "Microsoft.sql/servers",
       "location": "[resourceGroup().location]",
-      "name": "sql01_NIC",
+      "apiVersion": "2014-04-01-preview",
       "dependsOn": [
-        "[resourceId('Microsoft.Network/publicIPAddresses', 'sql01_IP')]",
-        "[resourceId('Microsoft.Network/virtualNetworks', 'vnet01')]",
+        "[resourceId('Microsoft.Network/networkInterfaces', 'sql01_NIC')]",
         "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')]"
       ],
+      "tags": {
+        "displayName": "sql01"
+      },
       "properties": {
-        "networkSecurityGroup": {
-          "id": "[resourceId('Microsoft.Network/networkSecurityGroups','nsg01')]"
-        },
-        "ipConfigurations": [
-          {
-            "name": "ipconfig1",
-            "properties": {
-              "privateIPAllocationMethod": "Dynamic",
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses','sql01_IP')]"
-              },
-              "subnet": {
-                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets','vnet01', 'subnet01')]"
-              }
-            }
+        "administratorLogin": "demogod",
+        "administratorLoginPassword": "[parameters('adminPassword')]"
+      },
+      "resources": [
+        {
+          "name": "AllowAllWindowsAzureIps",
+          "type": "firewallrules",
+          "location": "[resourceGroup().location]",
+          "apiVersion": "2014-04-01-preview",
+          "dependsOn": [
+            "[resourceId('Microsoft.sql/servers', 'sql01')]"
+          ],
+          "properties": {
+            "startIpAddress": "0.0.0.0",
+            "endIpAddress": "0.0.0.0"
           }
-        ]
-      }
-    },
-    {
-      "type": "Microsoft.Network/networkInterfaces",
-      "apiVersion": "2019-04-01",
-      "location": "[resourceGroup().location]",
-      "name": "ir01_NIC",
-      "dependsOn": [
-        "[resourceId('Microsoft.Network/publicIPAddresses','ir01_IP')]",
-        "[resourceId('Microsoft.Network/virtualNetworks','vnet01')]",
-        "[resourceId('Microsoft.Network/networkSecurityGroups','nsg01')]"
-      ],
-      "properties": {
-        "networkSecurityGroup": {
-          "id": "[resourceId('Microsoft.Network/networkSecurityGroups','nsg01')]"
-        },
-        "ipConfigurations": [
-          {
-            "name": "ipconfig1",
-            "properties": {
-              "privateIPAllocationMethod": "Dynamic",
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'ir01_IP')]"
-              },
-              "subnet": {
-                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet01', 'subnet01')]"
-              }
-            }
-          }
-        ]
-      }
+        }
+      ]
     }
   ],
     "outputs": {}
