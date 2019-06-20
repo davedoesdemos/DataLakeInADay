@@ -294,7 +294,7 @@
       "kind": "StorageV2",
       "resources": [
         {
-          "type": "Microsoft.Storage/storageAccounts/blobServices",
+          "type": "blobServices",
           "name": "default",
           "apiVersion": "2018-07-01"
         }
