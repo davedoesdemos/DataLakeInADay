@@ -184,7 +184,7 @@
           "dataDisks": []
         },
         "osProfile": {
-          "computerName": "[[variables('irservername')]",
+          "computerName": "ir01",
           "adminUsername": "demogod",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
@@ -236,7 +236,7 @@
           ]
         },
         "osProfile": {
-          "computerName": "[variables('sqlservername')]",
+          "computerName": "sql01",
           "adminUsername": "demogod",
           "adminPassword": "[parameters('adminPassword')]",
           "windowsConfiguration": {
