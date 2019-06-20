@@ -199,35 +199,82 @@
       }
     },
     {
+      "type": "Microsoft.Compute/virtualMachines",
+      "apiVersion": "2018-10-01",
       "name": "sql01",
-      "type": "Microsoft.sql/servers",
       "location": "[resourceGroup().location]",
-      "apiVersion": "2014-04-01-preview",
       "dependsOn": [
         "[resourceId('Microsoft.Network/networkInterfaces', 'sql01_NIC')]",
         "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')]"
       ],
-      "tags": {
-        "displayName": "sql01"
-      },
       "properties": {
-        "administratorLogin": "demogod",
-        "administratorLoginPassword": "[parameters('adminPassword')]"
-      },
-      "resources": [
-        {
-          "name": "AllowAllWindowsAzureIps",
-          "type": "firewallrules",
-          "location": "[resourceGroup().location]",
-          "apiVersion": "2014-04-01-preview",
-          "dependsOn": [
-            "[resourceId('Microsoft.sql/servers', 'sql01')]"
-          ],
-          "properties": {
-            "startIpAddress": "0.0.0.0",
-            "endIpAddress": "0.0.0.0"
+        "hardwareProfile": {
+          "vmSize": "Standard_A2_v2"
+        },
+        "storageProfile": {
+          "imageReference": {
+            "publisher": "MicrosoftSQLServer",
+            "offer": "SQL2017-WS2016",
+            "sku": "SQLDEV",
+            "version": "latest"
+          },
+          "osDisk": {
+            "createOption": "FromImage",
+            "diskSizeGB": 127
+          },
+          "dataDisks": []
+        },
+        "osProfile": {
+          "computerName": "sql01",
+          "adminUsername": "demogod",
+          "adminPassword": "[parameters('adminPassword')]",
+          "windowsConfiguration": {
+            "provisionVMAgent": true,
+            "enableAutomaticUpdates": true
+          },
+          "secrets": [],
+          "allowExtensionOperations": true
+        },
+        "networkProfile": {
+          "networkInterfaces": [
+            {
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', 'ir01_NIC')]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "sql01",
+      "type": "Microsoft.SqlVirtualMachine/SqlVirtualMachines",
+      "apiVersion": "2017-03-01-preview",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "virtualMachineResourceId": "[resourceId('Microsoft.Compute/virtualMachines', 'sql01')]",
+        "sqlManagement": "Full",
+        "SqlServerLicenseType": "PAYG",
+        "ServerConfigurationsManagementSettings": {
+          "SQLConnectivityUpdateSettings": {
+            "ConnectivityType": "Private",
+            "Port": "1433",
+            "SQLAuthUpdateUserName": "",
+            "SQLAuthUpdatePassword": ""
+          },
+          "SQLWorkloadTypeUpdateSettings": {
+            "SQLWorkloadType": "GENERAL"
+          },
+          "SQLStorageUpdateSettings": {
+            "DiskCount": "1",
+            "DiskConfigurationType": "NEW",
+            "StartingDeviceID": "2"
+          },
+          "AdditionalFeaturesServerConfigurations": {
+            "IsRServicesEnabled": "false"
           }
         }
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Compute/virtualMachines', 'sql01')]"
       ]
     }
   ],
