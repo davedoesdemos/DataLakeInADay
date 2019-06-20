@@ -198,49 +198,17 @@
     {
       "type": "Microsoft.Network/networkInterfaces",
       "apiVersion": "2019-04-01",
-      "name": "ir01_NIC",
       "location": "eastus",
-      "dependsOn": [
-        "[resourceId('Microsoft.Network/publicIPAddresses', 'ir01_IP')",
-        "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet01', 'default')]",
-        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
-      ],
-      "properties": {
-        "ipConfigurations": [
-          {
-            "name": "ipconfig1",
-            "properties": {
-              "privateIPAllocationMethod": "Dynamic",
-              "publicIPAddress": {
-                "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'ir01_IP')"
-              },
-              "subnet": {
-                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet01', 'default')]"
-              },
-              "primary": true,
-              "privateIPAddressVersion": "IPv4"
-            }
-          }
-        ]
-      },
-      "enableIPForwarding": false,
-      "networkSecurityGroup": {
-        "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
-      },
-      "primary": true,
-      "tapConfigurations": []
-    },
-    {
-      "type": "Microsoft.Network/networkInterfaces",
-      "apiVersion": "2019-04-01",
       "name": "sql01_NIC",
-      "location": "eastus",
       "dependsOn": [
         "[resourceId('Microsoft.Network/publicIPAddresses', 'sql01_IP')",
         "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet01', 'default')]",
         "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
       ],
       "properties": {
+        "networkSecurityGroup": {
+          "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
+        },
         "ipConfigurations": [
           {
             "name": "ipconfig1",
@@ -250,21 +218,43 @@
                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'sql01_IP')"
               },
               "subnet": {
-                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet01', 'default')]"
-              },
-              "primary": true,
-              "privateIPAddressVersion": "IPv4"
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'subnet01', 'default')]"
+              }
             }
           }
         ]
-        },
-        "enableIPForwarding": false,
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2019-04-01",
+      "location": "eastus",
+      "name": "ir01_NIC",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/publicIPAddresses', 'ir01_IP')",
+        "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet01', 'default')]",
+        "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
+      ],
+      "properties": {
         "networkSecurityGroup": {
           "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'nsg01')"
         },
-        "primary": true,
-        "tapConfigurations": []
+        "ipConfigurations": [
+          {
+            "name": "ipconfig1",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses', 'ir01_IP')"
+              },
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'subnet01', 'default')]"
+              }
+            }
+          }
+        ]
       }
+    }
   ],
     "outputs": {}
   }
