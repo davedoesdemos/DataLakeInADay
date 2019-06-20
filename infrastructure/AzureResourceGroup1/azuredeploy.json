@@ -222,7 +222,13 @@
             "createOption": "FromImage",
             "diskSizeGB": 127
           },
-          "dataDisks": []
+          "dataDisks": [
+            {
+              "createOption": "empty",
+              "lun": "1",
+              "diskSizeGB": "40"
+            }
+          ]
         },
         "osProfile": {
           "computerName": "sql01",
@@ -238,7 +244,7 @@
         "networkProfile": {
           "networkInterfaces": [
             {
-              "id": "[resourceId('Microsoft.Network/networkInterfaces', 'ir01_NIC')]"
+              "id": "[resourceId('Microsoft.Network/networkInterfaces', 'sql01_NIC')]"
             }
           ]
         }
