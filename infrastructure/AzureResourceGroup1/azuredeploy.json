@@ -296,7 +296,7 @@
         {
           "type": "Microsoft.Storage/storageAccounts/blobServices",
           "name": "default",
-          "apiVersion": "2018-07-01",
+          "apiVersion": "2018-07-01"
         }
       ]
     }
