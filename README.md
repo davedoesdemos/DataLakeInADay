@@ -8,6 +8,12 @@ The below image shows an overview of the platform components we will be using du
 
 ![Platform Overview](images/platform.png)
 
+# Proctor Notes
+
+Resources to support running this workshop.
+
+* [Proctor Notes](ProctorNotes/ProctorNotes.md)
+
 # Sessions
 
 * [Session 1 - Data Platform Overview and Options](Session1/Session1.md)
