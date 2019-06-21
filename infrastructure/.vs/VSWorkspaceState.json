@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AzureResourceGroup1",
+    "\\AzureResourceGroup1\\bin",
+    "\\AzureResourceGroup1\\bin\\Debug",
+    "\\AzureResourceGroup1\\obj",
+    "\\AzureResourceGroup1\\obj\\Debug"
+  ],
+  "SelectedNode": "\\AzureResourceGroup1\\azuredeploy.json",
+  "PreviewInSolutionExplorer": false
+}

@@ -18,6 +18,7 @@ The below image shows an overview of the platform components we will be using du
 
 * [Lab 1 - Getting Internal data with Azure Data Factory and the integration Runtime](Lab1/Lab1.md)
 * [Lab 2 - Getting external data using Logic App](Lab2/Lab2.md)
-* [Lab 3 - Process data using Databricks](Lab3/Lab3.md)
+* [Lab 3a - Process data using Databricks](Lab3a/Lab3a.md)
+* [Lab 3b - Process data using Mapping Data Flows](Lab3b/Lab3b.md)
 * [Lab 4 - Load data into SQL DW](Lab4/Lab4.md)
 * [Lab 5 - Load into Power BI](Lab5/Lab5.md)
