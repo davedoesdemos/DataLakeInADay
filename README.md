@@ -4,14 +4,13 @@
 This repository contains workshops and content for the data lake in a day engagement. While this is designed around the classroom and MTC, there is no reason you shouldn't work through the demos yourself at any time to gain an understanding of the platform.
 
 **Who it's for**
-This workshop is aimed at data specialists with no experience of the cloud data platform and data lake technology, as well as strategists, architects and execs who would like some experience of the ease of development of cloud data platforms. The outcome for those with data experience will be a quick start to boost confidence in starting to use these components, while the outcome for others will be aiding the decision making process.
+This workshop is aimed at data specialists with no experience of the cloud data platform and data lake technology, as well as strategists, architects and execs who would like some experience of the ease of development of cloud data platforms. The outcome for those with data experience will be a quick start to boost confidence in starting to use these components, while the outcome for others will be aiding the decision making process through seeing products and techniques in action.
 
 The below image shows an overview of the platform components we will be using during the day.
 
-
 ![Platform Overview](images/platform.png)
 
-# Proctor Notes
+# Proctor and Event Planning
 
 Resources to support running this workshop.
 

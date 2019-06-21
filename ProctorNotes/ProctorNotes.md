@@ -18,3 +18,7 @@ These notes are aimed at people running the workshop for a day. They should help
 15:00 - Lab 3a or Lab 3b
 16:00 - Lab 4
 17:00 - Lab 5 (Loading to Power BI is generally low priority so drop if short of time)
+
+## Labs
+
+The infrastructure is all hard coded so should not present any unusual problems. The password is **demogod** and it's advisable to suggest to the class to enter "Password123$" as their password when deploying - write this on a whiteboard to help them, but be sure to note it's not secure and that the demo subscription will be removed at the end of the day.
