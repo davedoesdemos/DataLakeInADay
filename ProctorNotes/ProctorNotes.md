@@ -22,3 +22,5 @@ These notes are aimed at people running the workshop for a day. They should help
 ## Labs
 
 The infrastructure is all hard coded so should not present any unusual problems. The password is **demogod** and it's advisable to suggest to the class to enter "Password123$" as their password when deploying - write this on a whiteboard to help them, but be sure to note it's not secure and that the demo subscription will be removed at the end of the day.
+
+For Lab 2, you may want to get an API key for everyone to use to save time. Go to [openweathermap](https://openweathermap.org) and sign up in advance. You can email the key to attendees, or place it on a OneDrive. Delete the account afterwards, or delete the key you gave out to prevent misuse.
