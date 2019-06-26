@@ -320,7 +320,7 @@
     },
     {
       "name": "[variables('dwservername')]",
-      "apiVersion": "2018-06-01",
+      "apiVersion": "2014-04-01-preview",
       "type": "Microsoft.Sql/servers",
       "location": "[resourceGroup().location]",
       "properties": {
@@ -331,7 +331,7 @@
       "resources": [
         {
           "type": "databases",
-          "apiVersion": "2018-06-01",
+          "apiVersion": "2014-04-01-preview",
           "name": "dw01",
           "location": "[resourceGroup().location]",
           "dependsOn": [
@@ -346,4 +346,4 @@
     }
   ],
       "outputs": {}
-    }
+}
