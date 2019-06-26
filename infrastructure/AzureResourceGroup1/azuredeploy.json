@@ -10,7 +10,8 @@
     "sqlservername": "[concat('sql', uniqueString(resourceGroup().id))]",
     "irservername": "[concat('ir', uniqueString(resourceGroup().id))]",
     "datastorename": "[concat('datastore', uniqueString(resourceGroup().id))]",
-    "adfname": "[concat('adf', uniqueString(resourceGroup().id))]"
+    "adfname": "[concat('adf', uniqueString(resourceGroup().id))]",
+    "dwservername": "[concat('dw', uniqueString(resourceGroup().id))]"
   },
   "resources": [
     {
@@ -316,6 +317,32 @@
       "identity": {
         "type": "SystemAssigned"
       }
+    },
+    {
+      "name": "[variables('dwservername')]",
+      "apiVersion": "2018-06-01",
+      "type": "Microsoft.Sql/servers",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "administratorLogin": "demogod",
+        "administratorLoginPassword": "[parameters('adminPassword')]",
+        "version": "12.0"
+      }
+      "resources": [
+        {
+          "type": "databases",
+          "apiVersion": "2014-04-01-preview",
+          "name": "dw01",
+          "location": "[resourceGroup().location]",
+          "dependsOn": [
+            "[concat('Microsoft.Sql/servers/', variables('dwservername'))]"
+          ],
+          "properties": {
+            "edition": "DataWarehouse",
+            "collation": "SQL_Latin1_General_CP1_CI_AS",
+          }
+        }
+      ]
     }
   ],
       "outputs": {}
