@@ -339,7 +339,7 @@
           ],
           "properties": {
             "edition": "DataWarehouse",
-            "collation": "SQL_Latin1_General_CP1_CI_AS",
+            "collation": "SQL_Latin1_General_CP1_CI_AS"
           }
         }
       ]
