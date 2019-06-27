@@ -11,7 +11,8 @@
     "irservername": "[concat('ir', uniqueString(resourceGroup().id))]",
     "datastorename": "[concat('datastore', uniqueString(resourceGroup().id))]",
     "adfname": "[concat('adf', uniqueString(resourceGroup().id))]",
-    "dwservername": "[concat('dw', uniqueString(resourceGroup().id))]"
+    "dwservername": "[concat('dw', uniqueString(resourceGroup().id))]",
+    "weatherappname": "[concat('weatherapp', uniqueString(resourceGroup().id))]"
   },
   "resources": [
     {
@@ -343,6 +344,24 @@
           }
         }
       ]
+    },
+    {
+      "name": "[variables('weatherappname')]",
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2016-10-01",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "definition": {
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "actions":{},
+          "triggers": {},
+          "outputs": {},
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#"
+        },
+        "parameters": {},
+        "state": "Enabled"
+      }
     }
   ],
       "outputs": {}
