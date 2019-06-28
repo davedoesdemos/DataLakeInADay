@@ -193,9 +193,92 @@ Now click "Publish All" to save your work. You should have 6 datasets as shown h
 
 ![datasets.png](images/datasets.png)
 
+If you click on one of your delimited text datasets you can see on the connection tab the settings for the delimited text. Here we can choose comme delimited (default) or tab etc. as required.
+
 ## Data Factory Pipeline
 
-Now click the add button and choose pipeline.
+Now click the add button and choose pipeline. Name the pipeline "PipelineDataCopy"
+
+![NewPipeline.png](images/NewPipeline.png)
+
+Now click on the parameters tab and add two parameters, runStartTime and runEndTime. Leave both blank.
+
+
+![NewPipelineParams.png](images/NewPipelineParams.png)
+
+Now, expand "Move and Transform" on the menu and drag a copy data job onto the canvas. Repeat this three times.
+
+![NewCopyJob.png](images/NewCopyJob.png)
+
+On the general tab for each job, rename them to CopyCustomers, CopyOrderItems and CopyOrders
+
+![NewCopyJobGeneral.png](images/NewCopyJobGeneral.png)
+
+On the source tab, select the appropriate SQL dataset to match the name for each job, then on the sink tab select the appropriate delimited text dataset. Change the file extension to .csv since that's how we'll be saving the data.
+
+Next, click on the CopyOrders copy activity. This copy activity will be different to the others since we're going to select just the rows from a given date. This will be the date of the data factory run, and the pipeline will run once a day to get new order data. In this demo we won't do anything special for customers or orderitems, but in real scenarios you would try to limit the amount of data copied for those too to avoid pressure on production databases.
+
+For this task, we'll be using the following SQL query
+```SQL
+SELECT * FROM [sales].[dbo].[orders] WHERE date between '2019-01-01 00:00:00' and '2019-01-02 00:00:00'
+```
+We will replace the two dates and times with parameters so that the query returns data between the start and end times for the pipeline run. We'll also need to escape the single quotes since Data Facory would not accept those in the query.
+
+On the source tab of the CopyOrders activity, change the radio button from Table to Query. Click in the Query box and then click Add Dynamic Content.
+
+Copy in the following query text. You may need to alter this if your parameter names are not identical. To do this you can remove the "pipeline().parameters.runStartTime" and use the dynamic content tool to select your parameters
+```SQL
+@concat('SELECT * FROM [sales].[dbo].[orders] WHERE date between ''', pipeline().parameters.runStartTime,''' and ''', pipeline().parameters.runEndTime, '''')
+```
+
+![NewCopyJobQuery.png](images/NewCopyJobQuery.png)
+
+Next, click on the Sink tab and click edit next to the dataset. Go to the Parameters tab and create one parameter called runStartTime and leave the value blank. This will be used to name the file with the run start date so that we get a unique file name per file.
+
+![datasetparameters.png](images/datasetparameters.png)
+
+Click the Connection tab and then in the file box and select add dynamic content. Here paste in `@concat(formatDateTime(dataset().runStartTime, 'yyyy-MM-dd'), '.csv')` and click finish. This will create the file name with the date and a .csv extension.
+
+![datasetFileName.png](images/datasetFileName.png)
+
+![datasetFileName2.png](images/datasetFileName2.png)
+
+Now click back to the copy job and you'll see you now have an empty box for the parameter of the dataset. Click here and choose runStartTime from the list of parameters in the dynamic content pane. This will pass the value from the pipeline parameter to the dataset parameter when the job runs.
+
+![copyJobParam.png](images/copyJobParam.png)
+
+Click Publish All to save your work.
+
+## Trigger
+
+Finally, we need to create a trigger and run the job. From the pipeline canvas, click Add Trigger and then New/Edit on the menu.
+
+![newTrigger.png](images/newTrigger.png)
+
+Click choose trigger then select new  on the drop down box.
+
+![newTrigger2.png](images/newTrigger2.png)
+
+Name the trigger TriggerTumblingWindow and then select "Tumbling Window" under Type. This will create one run for each time period we specify going back to the start date. Each has a start and end time which will be used in the SQL query above. This is useful because we can wipe the data lake at any point and re-collect the data if needed. We can also re-run any job if data changes and it will only affect that data. Select 1st July 2018 12:00AM as the start date and 31st December 2020 11:59PM as the end date. Use 24 hours as the recurrance. This means that each file generated will contain the orders for a 24 hour period.
+
+![newTrigger3.png](images/newTrigger3.png)
+
+Click Next and enter the following in the parameter value boxes. These will take the window start and end times and put them in the parameters we used previously.
+
+runStartTime - `@formatDateTime(trigger().outputs.windowStartTime, 'yyyy-MM-dd HH:mm:ss')`
+runEndTime - `@formatDateTime(trigger().outputs.windowEndTime, 'yyyy-MM-dd HH:mm:ss')`
+
+![newTrigger4.png](images/newTrigger4.png)
+
+Click Finish and then Publish All to save your work. This time, that will also trigger the jobs to be created. Only jobs in the past will be created, new ones will be created once per day until 31st December 2020. It is advisable to create new triggers regularly rather than choose a date far in the future here, that way you maintain control and don't forget to renew.
+
+## Monitor
+
+Click monitor to see the jobs which have been created. You'll start to see them turn green and completed rather than amber and in progress as they run. You will also start to see files appear in your blob storage containers.
+
+![monitor.png](images/monitor.png)
+
+![blobs.png](images/blobs.png)
 
 # Next
 
