@@ -77,3 +77,7 @@ The first create blob will store the raw JSON data as returned from the API. We 
 For the second create blob do exactly the same thing, but with the folder as `/raw/WeatherCSV` and the content as the output from the compose task.
 
 Now save and run your logic app. This should complete successfully and create four files in each of the specified folders.
+
+# Next
+
+Now you can go on to [Lab 3a](../Lab3a/Lab3a.md) or [Lab 3b](../Lab3b/Lab3b.md)

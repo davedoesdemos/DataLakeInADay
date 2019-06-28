@@ -124,9 +124,79 @@ Click refresh in the Azure Data Factory interface and ensure that the new connec
 
 ## Data Factory Connections
 
-Now we need to create two connections in Data Factory. One is for SQL Server, and the other is for Blob Storage.
+Now we need to create two connections in Data Factory. One is for SQL Server, and the other is for Blob Storage. In your data factory go to the connections tab and select "linked Services" then click the New button.
+
+![AddConnections.png](images/AddConnections.png)
+
+Now select Azure Blob Storage from the list and click Continue.
+
+![NewLinkedBlob.png](images/NewLinkedBlob.png)
+
+Now select your subscription and storage account from the drop down lists. Name the linked service "AzureBlobStorage" then click Finish.
+
+![NewLinkedBlob.png](images/NewLinkedBlob.png)
+
+Now click New again and this time select SQL Server. There are several SQL options so make sure it's SQL Server you select.
+
+![NewLinkedSQL.png](images/NewLinkedSQL.png)
+
+Now fill in the name as SQLServer. Select IntegrationRuntime1 (the one you configured earlier). SQL01 is the server name of the SQL Server - this is the Windows network name not the name of the server in the Azure portal. The runtime uses this to contact the server on the network. The database name is "sales". Select Windows Authentication and type demogod and your password. Now click test to ensure this is working. Once successful, click Finish.
+
+![NewLinkedSQL2.png](images/NewLinkedSQL2.png)
 
 ## Data Factory Datasets
 
+Next we need to create data sets to reference the data in various locations and formats. For now, we'll be creating the following:
+
+* SQL Datasets
+  * Customer table
+  * Order table
+  * Order detail table
+* Storage Account
+  * Customer CSV
+  * Order csv
+  * Order detail csv
+
+Click the plus sign and choose Dataset
+
+![AddDataset.png](images/AddDataset.png)
+
+Select Azure Blob Storage and click Continue
+
+![NewDatasetBlob.png](images/NewDatasetBlob.png)
+
+Select DelimitedText and click Continue
+
+![NewDatasetBlobCSV.png](images/NewDatasetBlobCSV.png)
+
+Use the name DelimitedTextCustomers and select "AzureBlobStorage" as your linked service. set the file path to raw/customers. Tick "First row as header" and select None for schema. Click Continue
+
+![NewDatasetBlobCSVSettings.png](images/NewDatasetBlobCSVSettings.png)
+
+Repeat this process for OrderItems as below
+
+![NewDatasetBlobCSVSettings2.png](images/NewDatasetBlobCSVSettings2.png)
+
+Repeat again for Orders as below
+
+![NewDatasetBlobCSVSettings3.png](images/NewDatasetBlobCSVSettings3.png)
+
+Now create a new dataset but choose SQL Server instead of Blob Storage. Use the drop down to select your SQL Server linked service, and then you can select the three tables, creating one dataset for each.
+
+![NewDatasetSQLSettings.png](images/NewDatasetSQLSettings.png)
+
+![NewDatasetSQLSettings2.png](images/NewDatasetSQLSettings2.png)
+
+![NewDatasetSQLSettings3.png](images/NewDatasetSQLSettings3.png)
+
+Now click "Publish All" to save your work. You should have 6 datasets as shown here. You may also want to use folders to organise them in the interface
+
+![datasets.png](images/datasets.png)
+
 ## Data Factory Pipeline
 
+Now click the add button and choose pipeline.
+
+# Next
+
+Now you can go on to [Lab 2](../Lab2/Lab2.md)
