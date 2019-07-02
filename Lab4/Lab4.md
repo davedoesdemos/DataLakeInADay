@@ -47,6 +47,8 @@ Now click your pipelineDataPrep in the menu and click the data flow action. On t
 
 Click Publish all to save your work and then click add trigger, Trigger Now, Finish to complete. You can monitor the job in Data Factory on the monitor tab. Once complete you can use the SAL Data Warehouse query editor to see the table in SQL DW.
 
+![dwtable.png](images/dwtable.png)
+
 # Next
 
 Now you can go on to [Lab 5](../Lab5/Lab5.md)
