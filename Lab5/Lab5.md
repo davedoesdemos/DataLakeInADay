@@ -4,6 +4,8 @@
 
 In this final lab, we will bring our data into Power BI and create a dashboard to visualise and dig in to the information.
 
+![architecture.png](images/architecture.png)
+
 # Setup
 
 ## Data Lake

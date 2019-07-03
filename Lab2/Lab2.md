@@ -5,7 +5,11 @@
 During this lab we will create a Logic App to download weather data from an Internet API. This data will later be used to enrich the sales data we imported with Data Factory in the first lab.
 In the logic app, we’ll be making the following structure. A timer will kick off the run once per day, then call the API for each city in the list then write the response to our data lake if it succeeds. If not you can send a mail or tweet to yourself.
 
- ![12.Overview](images/2.Overview.png)
+The solution is shown here:
+
+![architecture.png](images/architecture.png)
+
+For a look at the completed Logic App flow, scroll to the bottom of these instructions.
 
 # Setup
 
@@ -77,6 +81,10 @@ The first create blob will store the raw JSON data as returned from the API. We 
 For the second create blob do exactly the same thing, but with the folder as `/raw/WeatherCSV` and the content as the output from the compose task.
 
 Now save and run your logic app. This should complete successfully and create four files in each of the specified folders.
+
+This diagram shows the completed Logic App
+
+ ![12.Overview](images/2.Overview.png)
 
 # Next
 
