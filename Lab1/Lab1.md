@@ -134,7 +134,7 @@ Now select Azure Blob Storage from the list and click Continue.
 
 Now select your subscription and storage account from the drop down lists. Name the linked service "AzureBlobStorage" then click Finish.
 
-![NewLinkedBlob.png](images/NewLinkedBlob.png)
+![NewLinkedBlob2.png](images/NewLinkedBlob2.png)
 
 Now click New again and this time select SQL Server. There are several SQL options so make sure it's SQL Server you select.
 
@@ -266,6 +266,7 @@ Name the trigger TriggerTumblingWindow and then select "Tumbling Window" under T
 Click Next and enter the following in the parameter value boxes. These will take the window start and end times and put them in the parameters we used previously.
 
 runStartTime - `@formatDateTime(trigger().outputs.windowStartTime, 'yyyy-MM-dd HH:mm:ss')`
+
 runEndTime - `@formatDateTime(trigger().outputs.windowEndTime, 'yyyy-MM-dd HH:mm:ss')`
 
 ![newTrigger4.png](images/newTrigger4.png)
