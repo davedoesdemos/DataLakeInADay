@@ -134,7 +134,7 @@ Now select Azure Blob Storage from the list and click Continue.
 
 Now select your subscription and storage account from the drop down lists. Name the linked service "AzureBlobStorage" then click Finish.
 
-![NewLinkedBlob.png](images/NewLinkedBlob.png)
+![NewLinkedBlob2.png](images/NewLinkedBlob2.png)
 
 Now click New again and this time select SQL Server. There are several SQL options so make sure it's SQL Server you select.
 
