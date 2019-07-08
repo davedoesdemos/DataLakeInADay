@@ -339,9 +339,15 @@
             "[concat('Microsoft.Sql/servers/', variables('dwservername'))]"
           ],
           "properties": {
+            ""
             "edition": "DataWarehouse",
             "collation": "SQL_Latin1_General_CP1_CI_AS"
-          }
+          },
+          "sku": {
+            "name": "DW100c",
+            "tier": "DataWarehouse",
+            "capacity": 100
+          } 
         }
       ]
     },

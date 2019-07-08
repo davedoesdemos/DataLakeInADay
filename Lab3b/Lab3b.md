@@ -92,7 +92,7 @@ Now, add in a third source for orders. Create a new data set called DelimitedTex
 
 ![paramsinfilepath.png](images/paramsinfilepath.png)
 
-After sourceOrders add in a join action. Name this joinOrderData then select sourceOrderItems as the right stream. Select Lect outer as the join type and then order_id for both columns.
+After sourceOrders add in a join action. Name this joinOrderData then select sourceOrderItems as the right stream. Select Left outer as the join type and then order_id for both columns.
 
 ![join.png](images/join.png)
 
@@ -129,8 +129,6 @@ on aggregateItemDate, set up item and date as the group by columns
 ![aggregateItemDate.png](images/aggregateItemDate.png)
 
 set up countItems as count(item), maxQuantity as max(quantity) and minQuantity as min(quantity)
-
-![aggregateItemDate2.png](images/aggregateItemDate2.png)
 
 Create two more sinks for these tables in the model under /model/AggrItemDate and /model/AggrCityDate. Your entire data flow should now look like this:
 
