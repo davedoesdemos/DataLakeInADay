@@ -56,7 +56,7 @@ On your source settings, name the Output Stream "sourceCustomers". Select Delimi
 
 ![sourceCustomerSettings.png](images/sourceCustomerSettings.png)
 
-Since we didn't set up a schema on the CSV data sets in Lab 1 you'll need to do that now. Because we now have data in the files we can simply import the schema. Click on the edit button next to DelimitedTextCustomers to edit the data set. Go to the Schema tab and click "Import Schema" then "From Files with *.*" and you should see the schema imported. We can now use these columns in the data flow directly.
+Since we didn't set up a schema on the CSV data sets in Lab 1 you'll need to do that now. Because we now have data in the files we can simply import the schema. Click on the edit button next to DelimitedTextCustomers to edit the data set. Go to the Schema tab and click "Import Schema" then "From Files with \*.\*" and you should see the schema imported. We can now use these columns in the data flow directly.
 
 ![schema.png](images/schema.png)
 
