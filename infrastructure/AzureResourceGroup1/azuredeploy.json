@@ -340,13 +340,10 @@
           ],
           "properties": {
             "edition": "DataWarehouse",
-            "collation": "SQL_Latin1_General_CP1_CI_AS"
-          },
-          "sku": {
-            "name": "DW100c",
-            "tier": "DataWarehouse",
-            "capacity": 100
-          } 
+            "collation": "SQL_Latin1_General_CP1_CI_AS",
+            "requestedServiceObjectiveName": "DW100c"
+
+          }
         }
       ]
     },
