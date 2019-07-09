@@ -21,7 +21,7 @@ Once you have logged in successfully to your subscription [go here](https://gith
 * An empty storage account which will be our data lake
 * A blank Data Factory
 
-The username for all servers is **demogod** and you will choose your password when you click the deploy button [here](https://github.com/davedoesdemos/DataLakeInADay/blob/master/infrastructure/readme.md)
+The username for all servers is **demogod** and you will choose your password (we suggest Password123$) when you click the deploy button [here](https://github.com/davedoesdemos/DataLakeInADay/blob/master/infrastructure/readme.md). Please deploy to East US region.
 
 ## SQL Data
 

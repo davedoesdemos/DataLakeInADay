@@ -60,7 +60,7 @@ Add the status code from the HTTP request as the condition using dynamic content
 
 You'll now have two branches, one for true (success) and one false (failure). You can add in an email action to the failure side, or some other useful action to log or correct an error. We won't fill that in here as this is a demo.
 
-Next, call the API manually in a new browser tab to get a sample of the payload. We'll need to use this in the Parse JSON task to generate a schema as it's easier than writing the schema manually. You could also find the schema in the documentation of the API. To call the API manually use the following but remember to replace <YOURAPIKEY> with your actual API key:
+Next, call the API manually in a new browser tab to get a sample of the payload. We'll need to use this in the Parse JSON task to generate a schema as it's easier than writing the schema manually. You could also find the schema in the documentation of the API. The schema detection is not perfect, so you may need to change some Integer types to Number if you have errors when running the app. To call the API manually use the following but remember to replace <YOURAPIKEY> with your actual API key:
 
 ``` http://api.openweathermap.org/data/2.5/weather?APPID=<YOURAPIKEY>&q=reading,uk&units=metric ```
 

@@ -54,6 +54,8 @@ Details about the infrastructure we deploy for the labs, as well as instructions
 
 * [Set up your infrastructure](infrastructure/readme.md)
 
+Please deploy to the East US region, and use "Password123$" as your password.
+
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdavedoesdemos%2FDataLakeInADay%2Fmaster%2Finfrastructure%2FAzureResourceGroup1%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
     </a>
