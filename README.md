@@ -62,7 +62,7 @@ Please deploy to the East US region, and use "Password123$" as your password.
 
 # Labs
 
-The labs build to a data lake reporting solution with multiple data sources. 
+The labs build to a data lake reporting solution with multiple data sources. Here we will show how data can be collected from the Internet and merged with data from an internal Sales database. We will then process this information and create reports based on the data.
 
 * [Lab 1 - Getting Internal data with Azure Data Factory and the integration Runtime](Lab1/Lab1.md)
 * [Lab 2 - Getting external data using Logic App](Lab2/Lab2.md)

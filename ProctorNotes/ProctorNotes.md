@@ -6,18 +6,19 @@ These notes are aimed at people running the workshop for a day. They should help
 
 ## Schedule
 
-* 09:00 - arrive and breakfast
-* 09:30 - Set up infrastructure (deploy takes ~14 minutes)
-* 10:00 - Session 1 (starts as soon as deploy begins)
-* 10:30 - **Coffee Break**
+Mention to delegates that labs are self paced and so no coffee breaks are scheduled in. Coffee and sanwiches will be ordered at specific times and will be mentioned but there are not specific breaks for these.
+
+* 09:30 - arrive and breakfast
+* 10:00 - Set up infrastructure (deploy takes ~14 minutes)
+* 10:30 - Session 1 (starts as soon as deploy begins)
 * 11:00 - Lab 1 ()
 * 12:00 - **Lunch**
-* 13:00 - Lab 2
-* 14:00 - Session 2
-* 14:30 - **Coffee Break**
-* 15:00 - Lab 3a or Lab 3b
-* 16:00 - Lab 4
-* 17:00 - Lab 5 (Loading to Power BI is generally low priority so drop if short of time)
+* 12:45 - session 2
+* 13:15 - Lab 2
+* 14:45 - Lab 3a or Lab 3b
+* 15:15 - Lab 4
+* 15:45 - Lab 5 (Loading to Power BI is generally low priority so drop if short of time)
+* 16:15 - Finish
 
 ## Infrastructure
 
@@ -34,3 +35,7 @@ The username is **demogod** and it's advisable to suggest to the class to enter 
 * May be an error when creating the Blob connection from Logic App - this needs you to go to Subscriptions, resource providers and set up the Microsoft.web provider. This seems to be a recent change.
 
 * The Schema in the Logic App may need some instances of Integer changing to number - this causes the first run to fail and is to show the class that the infered schema may not always be perfect. This is intentionally left as an error to enhance learning.
+
+## UK MTC
+
+The UK MTC can run these workshops. Please make a request as usual through the MTC. These will generally be held in the training room where there is space for 20 delegates and computers are provided so they won't need their own laptops. We are also able to provide 
