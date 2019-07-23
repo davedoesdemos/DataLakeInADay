@@ -4,6 +4,26 @@
 
 These notes are aimed at people running the workshop for a day. They should help you to guide the day to meet expectations and cover the right products, as well as keep the day moving and plan for timing and breaks.
 
+## Booking
+
+To book this in the MTC (MS Staff only) please follow the instructions in [DataLakeInADayBookingInstructions.pdf](DataLakeInADayBookingInstructions.pdf)
+
+**Location:** The lab will take place at the UK MTC (Reading or London)
+**How to book:**
+* Agree with your customer 2 or 3 possible days  
+* Summit a request through aka.ms/mtcrequest  (please summit your request at least with 4 weeks in advance)
+* Wait the confirmation from MTC 
+* A qualification call from the MTC will be scheduled, where we are going to explain you all about the lab
+* After the call will send you the agenda of the day
+* When you received  the agenda you can now confirm the date with the customer 
+
+**What to expect during the day:**
+* Full day lab from 9:30 am – 4:30 pm
+* Food will be provided: breakfast, lunch and some snacks during the breaks 
+* Azure tenant for the day 
+* If you decide to book at the MTC Reading, the computers will be provided as well, if you want!
+
+
 ## Schedule
 
 Mention to delegates that labs are self paced and so no coffee breaks are scheduled in. Coffee and sanwiches will be ordered at specific times and will be mentioned but there are not specific breaks for these.
