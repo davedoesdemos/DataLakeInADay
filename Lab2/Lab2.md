@@ -70,11 +70,12 @@ Now add a parse JSON action to the "if true" branch. Add Body from the HTTP requ
 
 ![9.Compose.png](images/9.Compose.png)
 
-In the Inputs, add the first line `City, Temperature, Pressure, Windspeed, WindDirection` and then add in the matching variables from the parse JSON action on the next line. These are `Name, temp, pressure, speed, deg` which are the labels from the JSON returned from the API. This will result in a CSV formatted file which we'll use later. Now add in two Create Blob jobs. Follow the connection wizard to select the Raw container in your storage account, which is where we will store the data.
+In the Inputs, add the first line `City, Temperature, Pressure, Windspeed, WindDirection` and then add in the matching variables from the parse JSON action on the next line. These are `Name, temp, pressure, speed, deg` which are the labels from the JSON returned from the API. This will result in a CSV formatted file which we'll use later. 
+Now add in two Create Blob jobs. Follow the connection wizard by adding a name and choosing the Raw container in your storage account, which is where we will store the data.
 
 ![10.CreateBlob1.png](images/10.CreateBlob1.png)
 
-The first create blob will store the raw JSON data as returned from the API. We may decide down the road to use more of the information from this so it's useful to keep and cheap to store in Blob. Set the folder path to `/raw/WeatherJSON` then use dynamic content to get the `name` variable and also to create an expression for `formatDateTime(utcnow(), 'yyyy-MM-dd')` which will return the current date in year, month, day format which is useful for filenames. Add .json to the end as the file extension. Set the Blob Content to the body of the HTTP request.
+The first create blob will store the raw JSON data as returned from the API. We may decide later on to store more of the information returned from the API so Blob or Data Lake will provide the most cost effective storage option to do so. Set the folder path to `/raw/WeatherJSON` (you may need to copy-paste this) then use dynamic content to get the `name` variable and also to create an expression for `formatDateTime(utcnow(), 'yyyy-MM-dd')` which will return the current date in year, month, day format which is useful for filenames. Add .json to the end as the file extension. Set the Blob Content to the body of the HTTP request.
 
 ![11.CreateBlob2.png](images/11.CreateBlob2.png)
 
