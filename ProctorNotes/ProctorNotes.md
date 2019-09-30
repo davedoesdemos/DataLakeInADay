@@ -23,6 +23,13 @@ To book this in the MTC (MS Staff only) please follow the instructions in [DataL
 * Azure tenant for the day 
 * If you decide to book at the MTC Reading, the computers will be provided as well, if you want!
 
+## Accounts
+
+Do this BEFORE the day of the workshop. Getting a whole class to set up accounts takes a lot of time.
+
+To request Azure passes, go to [https://requests.microsoftazurepass.com/](https://requests.microsoftazurepass.com/) and submit requests for enough passes to fill the class.
+
+Go to [http://aka.ms/azurepasssetup](http://aka.ms/azurepasssetup) for instructions on creating accounts and subscriptions for everyone in the class. Use generic user names and a standard password to keep things simple in the class.
 
 ## Schedule
 
