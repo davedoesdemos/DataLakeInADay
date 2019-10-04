@@ -28,6 +28,7 @@ To book this in the MTC (MS Staff only) please follow the instructions in [DataL
 Do this BEFORE the day of the workshop. Getting a whole class to set up accounts takes a lot of time.
 
 To request Azure passes, go to [https://requests.microsoftazurepass.com/](https://requests.microsoftazurepass.com/) and submit requests for enough passes to fill the class.
+The deployment will cost approximately $30 per day
 
 Go to [http://aka.ms/azurepasssetup](http://aka.ms/azurepasssetup) for instructions on creating accounts and subscriptions for everyone in the class. Use generic user names and a standard password to keep things simple in the class.
 
