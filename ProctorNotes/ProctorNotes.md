@@ -4,9 +4,9 @@
 
 These notes are aimed at people running the workshop for a day. They should help you to guide the day to meet expectations and cover the right products, as well as keep the day moving and plan for timing and breaks.
 
-## Booking
+## Booking the MTC
 
-To book this in the MTC (MS Staff only) please follow the instructions in [DataLakeInADayBookingInstructions.pdf](DataLakeInADayBookingInstructions.pdf)
+The UK MTC can run these workshops. These will generally be held in the training room where there is space for 20 delegates and computers are provided so they won't need their own laptops. To book this in the MTC (MS Staff/partners only) please follow the instructions in [DataLakeInADayBookingInstructions.pdf](DataLakeInADayBookingInstructions.pdf)
 
 **Location:** The lab will take place at the UK MTC (Reading or London)
 **How to book:**
@@ -30,6 +30,14 @@ Do this BEFORE the day of the workshop. Getting a whole class to set up accounts
 To request Azure passes, go to [https://requests.microsoftazurepass.com/](https://requests.microsoftazurepass.com/) and submit requests for enough passes to fill the class.
 
 Go to [http://aka.ms/azurepasssetup](http://aka.ms/azurepasssetup) for instructions on creating accounts and subscriptions for everyone in the class. Use generic user names and a standard password to keep things simple in the class.
+
+## Delegates
+
+You may end up with a mix of skillsets in the room. If this is the case, mix the group into teams with at least one technical person per team. Technical skills required are:
+* Understand RDP to server desktops
+* Understand the Azure portal interface
+
+Delegates without these skills may need considerable help so plan around this and understand the audience before the day.
 
 ## Schedule
 
@@ -63,6 +71,3 @@ The username is **demogod** and it's advisable to suggest to the class to enter 
 
 * The Schema in the Logic App may need some instances of Integer changing to number - this causes the first run to fail and is to show the class that the infered schema may not always be perfect. This is intentionally left as an error to enhance learning.
 
-## UK MTC
-
-The UK MTC can run these workshops. Please make a request as usual through the MTC. These will generally be held in the training room where there is space for 20 delegates and computers are provided so they won't need their own laptops. We are also able to provide 

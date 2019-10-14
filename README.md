@@ -7,7 +7,7 @@ This repository contains workshops and content for the data lake in a day engage
 
 This workshop is aimed at data specialists with no experience of the cloud data platform and data lake technology, as well as strategists, architects and execs who would like some experience of the ease of development of cloud data platforms. The outcome for those with data experience will be a quick start to boost confidence in starting to use these components, while the outcome for others will be aiding the decision making process through seeing products and techniques in action.
 
-This workshop is not an in depth technical day, nor is it designed to teach you products in depth. Instead the aim is an introduction to the entire concept of data lakes.
+This workshop is not an in depth technical day, nor is it designed to teach you products in depth. Instead the aim is an introduction to the entire concept of data lakes, and it does this through building a lake. The day does not contain presentations designed to explain what a lake is or does, it is a practical hands on day and an understanding of concepts will develop through the labs.
 
 The below image shows an overview of the platform components we will be using during the day.
 

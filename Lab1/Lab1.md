@@ -14,7 +14,7 @@ Once configured, an "integration runtime" component will send data securely outw
 
 ## Infrastructure
 
-Once you have logged in successfully to your subscription [go here](https://github.com/davedoesdemos/DataLakeInADay/blob/master/infrastructure/readme.md) to deploy the initial infrastructure for the workshop. This includes:
+Once you have logged in successfully to your subscription [go here](https://github.com/davedoesdemos/DataLakeInADay/blob/master/infrastructure/readme.md) if you have not already deployed your infrastructure to deploy the initial infrastructure for the workshop. This includes:
 * A Virtual network to represent your data centre network
 * An empty SQL Server
 * A blank Windows server for the integration runtime
