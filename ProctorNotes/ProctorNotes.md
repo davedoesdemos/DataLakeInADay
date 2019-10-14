@@ -15,12 +15,12 @@ The UK MTC can run these workshops. These will generally be held in the training
 * Wait the confirmation from MTC 
 * A qualification call from the MTC will be scheduled, where we are going to explain you all about the lab
 * After the call will send you the agenda of the day
-* When you received  the agenda you can now confirm the date with the customer 
+* When you received  the agenda you can now confirm the date with the customer
 
 **What to expect during the day:**
 * Full day lab from 9:30 am – 4:30 pm
-* Food will be provided: breakfast, lunch and some snacks during the breaks 
-* Azure tenant for the day 
+* Food will be provided: breakfast, lunch and some snacks during the breaks
+* Azure tenant for the day
 * If you decide to book at the MTC Reading, the computers will be provided as well, if you want!
 
 ## Accounts
@@ -28,6 +28,7 @@ The UK MTC can run these workshops. These will generally be held in the training
 Do this BEFORE the day of the workshop. Getting a whole class to set up accounts takes a lot of time.
 
 To request Azure passes, go to [https://requests.microsoftazurepass.com/](https://requests.microsoftazurepass.com/) and submit requests for enough passes to fill the class.
+The deployment will cost approximately $30 per day
 
 Go to [http://aka.ms/azurepasssetup](http://aka.ms/azurepasssetup) for instructions on creating accounts and subscriptions for everyone in the class. Use generic user names and a standard password to keep things simple in the class.
 
@@ -71,3 +72,9 @@ The username is **demogod** and it's advisable to suggest to the class to enter 
 
 * The Schema in the Logic App may need some instances of Integer changing to number - this causes the first run to fail and is to show the class that the infered schema may not always be perfect. This is intentionally left as an error to enhance learning.
 
+<<<<<<< HEAD
+=======
+## UK MTC
+
+The UK MTC can run these workshops. Please make a request as usual through the MTC. These will generally be held in the training room where there is space for 20 delegates and computers are provided so they won't need their own laptops. We are also able to provide 
+>>>>>>> cdb4e5be5bed46d1f812b3fef505b09e1313f29d
