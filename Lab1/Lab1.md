@@ -49,78 +49,143 @@ Select Private (no anonymous access) and give the container a name of "raw". Cli
 
 ## Self Hosted Integration Runtime
 
+<table style="width:100%">
+<tr>
+<td style="width:50%">
 Log into the integration runtime server (ir-*uniquestring*) using the username **demogod** and your password.
 
 In Server Manager, click Local Server then disable IE Enhanced Security Configuration for administrators by clicking the word on next to the setting.
-![IEEnhancedSecurityConfiguration.png](images/IEEnhancedSecurityConfiguration.png)
-
+</td>
+<td style="width:50%">
+<img src="images/IEEnhancedSecurityConfiguration.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>
 Now open Internet explorer and download the runtime from [https://www.microsoft.com/download/details.aspx?id=39717](https://www.microsoft.com/download/details.aspx?id=39717)
 
 Double click the installer then Choose your language and click Next
+</td>
+<td>
+<img src="images/InstallIR1.png" width="350"/></td>
+</tr>
+<tr>
+<td>Agree to the terms and click Next
+</td>
+<td>
+<img src="images/InstallIR2.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Choose an install location (default is fine) and click Next
+</td>
+<td>
+<img src="images/InstallIR3.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Click Install
+</td>
+<td>
+<img src="images/InstallIR4.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>The installer will continue and install the software
+</td>
+<td>
+<img src="images/InstallIR5.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Click Finish
+</td>
+<td>
+<img src="images/InstallIR6.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>The installer will then launch the configuration manager. Here you can register the integration runtime with your data factory
+</td>
+<td>
+<img src="images/RegisterIR1.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Browse to your data factory in the Azure Portal and click Author and Monitor
+</td>
+<td>
+<img src="images/RegisterIR2.png" width="350"/>
+</td>
+</tr>
 
-![InstallIR1.png](images/InstallIR1.png)
+<tr>
+<td>Next, click on the pencil icon on the left of the Data Factory screen to enter the designer. Next, click Connections at the bottom left of your screen and then Integration Runtimes. Click the New button
+</td>
+<td>
+<img src="images/RegisterIR3.png" width="350"/>
+</td>
+</tr>
 
-Agree to the terms and click Next
+<tr>
+<td>Select "Perform data movement and dispatch activities to external computes." and click Next
+</td>
+<td>
+<img src="images/RegisterIR4.png" width="350"/>
+</td>
+</tr>
 
-![InstallIR2.png](images/InstallIR2.png)
+<tr>
+<td>Select "Self Hosted" and click Next
+</td>
+<td>
+<img src="images/RegisterIR5.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Give the connection a name and description and then click Next
+</td>
+<td>
+<img src="images/RegisterIR6.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Copy one of the secure keys
+</td>
+<td>
+<img src="images/RegisterIR7.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Paste the key into the configuration manager window and click Register to complete setup
+</td>
+<td>
+<img src="images/RegisterIR8.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Once it's registered click Finish and close the remote desktop session
+</td>
+<td>
+<img src="images/RegisterIR9.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<img src="images/RegisterIR10.png" width="350"/>
+</td>
+</tr>
+<tr>
+<td>Click refresh in the Azure Data Factory interface and ensure that the new connection shows as connected.
+</td>
+<td>
+<img src="images/RegisterIR11.png" width="350"/>
+</td>
+</tr>
+</table>
 
-Choose an install location (default is fine) and click Next
-
-![InstallIR3.png](images/InstallIR3.png)
-
-Click Install
-
-![InstallIR4.png](images/InstallIR4.png)
-
-The installer will continue and install the software
-
-![InstallIR5.png](images/InstallIR5.png)
-
-Click Finish
-
-![InstallIR6.png](images/InstallIR6.png)
-
-The installer will then launch the configuration manager. Here you can register the integration runtime with your data factory
-
-![RegisterIR1.png](images/RegisterIR1.png)
-
-Browse to your data factory in the Azure Portal and click Author and Monitor
-
-![RegisterIR2.png](images/RegisterIR2.png)
-
-Next, click on the pencil icon on the left of the Data Factory screen to enter the designer. Next, click Connections at the bottom left of your screen and then Integration Runtimes. Click the New button
-
-![RegisterIR3.png](images/RegisterIR3.png)
-
-Select "Perform data movement and dispatch activities to external computes." and click Next
-
-![RegisterIR4.png](images/RegisterIR4.png)
-
-Select "Self Hosted" and click Next
-
-![RegisterIR5.png](images/RegisterIR5.png)
-
-Give the connection a name and description and then click Next
-
-![RegisterIR6.png](images/RegisterIR6.png)
-
-Copy one of the secure keys
-
-![RegisterIR7.png](images/RegisterIR7.png)
-
-Paste the key into the configuration manager window and click Register to complete setup
-
-![RegisterIR8.png](images/RegisterIR8.png)
-
-Once it's registered click Finish and close the remote desktop session
-
-![RegisterIR9.png](images/RegisterIR9.png)
-
-![RegisterIR10.png](images/RegisterIR10.png)
-
-Click refresh in the Azure Data Factory interface and ensure that the new connection shows as connected.
-
-![RegisterIR11.png](images/RegisterIR11.png)
 
 ## Data Factory Connections
 
