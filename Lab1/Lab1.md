@@ -49,14 +49,14 @@ Select Private (no anonymous access) and give the container a name of "raw". Cli
 
 ## Self Hosted Integration Runtime
 
-<table style="width:100%">
+<table>
 <tr>
-<td style="width:50%">
+<td>
 Log into the integration runtime server (ir-*uniquestring*) using the username **demogod** and your password.
 
 In Server Manager, click Local Server then disable IE Enhanced Security Configuration for administrators by clicking the word on next to the setting.
 </td>
-<td style="width:50%">
+<td>
 <img src="images/IEEnhancedSecurityConfiguration.png" width="350"/>
 </td>
 </tr>
