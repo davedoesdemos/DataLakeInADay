@@ -181,7 +181,7 @@ Double click the installer then Choose your language and click Next
 <td>Click refresh in the Azure Data Factory interface and ensure that the new connection shows as connected.
 </td>
 <td>
-<img src="images/RegisterIR11.png" width="350"/>
+<img src="images/RegisterIR11.png" width="550"/>
 </td>
 </tr>
 </table>
