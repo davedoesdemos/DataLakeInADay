@@ -23,8 +23,8 @@ Don't wait for this to complete, just let the upload happen in the background.
 ### Weather Data
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>In Data Factory, create a new pipeline and name it PipelineDataPrep. Add a Copy Data action to this and call that CopyWeatherData. On the source tab, click New to create a new dataset. Select Blob Storage and then your AzureBlobStorage linked service. Name this dataset DelimitedTextWeatherSource and then select /raw/weatherCSV as the folder and tick first row as header. Select no schema and click finish.</td>
 <td><img src="images/datasetWeather.png" /></td>
@@ -50,8 +50,8 @@ Once we have the fact table, we will then create some aggregation tables with th
 ![Transorm.png](images/Transform.png)
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>On your "pipelineDataPrep" canvas, drag in a data flow activity. Then select "Create new Data Flow" and then "Mapping Data Flow" and click Finish.</td>
 <td><img src="images/newDataFlow.png" /></td>

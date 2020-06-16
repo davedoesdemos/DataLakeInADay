@@ -32,8 +32,8 @@ Once the query returns successfully SQL Data Warehouse is configured.
 ## Data Factory
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>In Data Factory we will now extend the data flow previously created to include the data load into SQL Data Warehouse. Open Data Factory and then click your data flow. Click the plus after SelectRemoveColumns and choose to add a branch. On the new branch, add a sink task. Name the sink task sinkOrderFactDW and create a new data set. This time, select Azure SQL Data Warehouse as the data store.</td>
 <td><img src="images/datasetDW.png" /></td>

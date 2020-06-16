@@ -17,8 +17,8 @@ Download the weather data from [here](https://github.com/davedoesdemos/DataLakeI
 ### Blob Storage
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>Open Power BI Desktop and create a new empty file. Click "Get Data" on the menu and select Azure Blob Storage from the list then press connect</td>
 <td><img src="images/blob.png" /></td>
@@ -62,8 +62,8 @@ Use the navigator to select the model container and click Load</td>
 ### SQL DW
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>Next, click New source and select Azure SQL Data Warehouse.</td>
 <td><img src="images/sqldw.png" /></td>
@@ -89,8 +89,8 @@ Use the navigator to select the model container and click Load</td>
 ### Modeling
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>Click on the orders table and then the total column. Set the data type to Decimal Number and currency. </td>
 <td><img src="images/columntype.png" /></td>
@@ -116,8 +116,8 @@ Next, create the following relationships:
 | AggrItemDate | item | Many | One | item | Items |
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>Next, click on the aggrCityDate ellipsis menu and select Manage Aggregations. Set the aggregations as below:</td>
 <td><img src="images/aggregations.png" /></td>
@@ -131,8 +131,8 @@ Next, create the following relationships:
 ### Report
 
 <table>
-<col width=60% />
-<col width=40% />
+<col width="60%" />
+<col width="40%" />
 <tr>
 <td>Go to the report tab in Power BI and add a matrix visualisation. From the orders table, drag City, date and order_id to the Rows box and then Item to the Values box, then set the values to count of item</td>
 <td><img src="images/Matrix1.png" /></td>
