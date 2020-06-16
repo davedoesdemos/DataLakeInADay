@@ -28,8 +28,12 @@ Don't wait for this to complete, just let the upload happen in the background.
 <td width="40%"><img src="images/datasetWeather.png" /></td>
 </tr>
 <tr>
-<td width="60%">Repeat this process on the Sink tab but use the name DelimitedTextWeatherSink and change the path to /model/Weather</td>
+<td width="60%">Repeat this process on the Sink tab but use the name DelimitedTextWeatherSink and change the path to /model/Weather/</td>
 <td width="40%"><img src="images/datasetWeather2.png" /></td>
+</tr>
+<tr>
+<td width="60%">Change the source to wildcard file path and set this to /Raw/WeatherCSV/*.csv</td>
+<td width="40%"><img src="images/datasetWeather2a.png" /></td>
 </tr>
 <tr>
 <td width="60%">Back on the sink tab of the copy activity, change the copy behaviour to "merge files" and the extension to .csv</td>
