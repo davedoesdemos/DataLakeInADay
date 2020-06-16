@@ -35,156 +35,114 @@ You will now have an example sales database.
 
 ## Storage Containers
 
-Next we need to create the containers on our data lake. Here we'll be using Blob Storage, but you may use Azure Data Lake Storage Gen1 or Gen2 in a real scenario. For what we're doing here the process is almost the same. In the Azure Portal browse for your storage account (datastore-*uniquestring*). Click Blobs
-
-![Containers1.png](images/Containers1.png)
-
-Now click +Container at the top to create a new container
-
-![Containers2.png](images/Containers2.png)
-
-Select Private (no anonymous access) and give the container a name of "raw". Click OK and repeat the process to create a new container named "model"
-
-![Containers3.png](images/Containers3.png)
+<table>
+<tr>
+<td width="60%">Next we need to create the containers on our data lake. Here we'll be using Blob Storage, but you may use Azure Data Lake Storage Gen1 or Gen2 in a real scenario. For what we're doing here the process is almost the same. In the Azure Portal browse for your storage account (datastore-*uniquestring*). Click Blobs</td>
+<td width="40%"><img src="images/Containers1.png" /></td>
+</tr>
+<tr>
+<td width="60%">Now click +Container at the top to create a new container</td>
+<td width="40%"><img src="images/Containers2.png" /></td>
+</tr>
+<tr>
+<td width="60%">Select Private (no anonymous access) and give the container a name of "raw". Click OK and repeat the process to create a new container named "model"</td>
+<td width="40%"><img src="images/Containers3.png" /></td>
+</tr>
+</table>
 
 ## Self Hosted Integration Runtime
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>
+<td width="60%">
 Log into the integration runtime server (ir-*uniquestring*) using the username **demogod** and your password.
 
 In Server Manager, click Local Server then disable IE Enhanced Security Configuration for administrators by clicking the word on next to the setting.
 </td>
-<td>
-<img src="images/IEEnhancedSecurityConfiguration.png" width="350"/>
+<td width="40%"><img src="images/IEEnhancedSecurityConfiguration.png" width="350"/>
 </td>
 </tr>
 <tr>
-<td>
+<td width="60%">
 Now open Internet explorer and download the runtime from [https://www.microsoft.com/download/details.aspx?id=39717](https://www.microsoft.com/download/details.aspx?id=39717)
 
 Double click the installer then Choose your language and click Next
 </td>
-<td>
-<img src="images/InstallIR1.png" width="350"/></td>
+<td width="40%"><img src="images/InstallIR1.png" width="350"/></td>
 </tr>
 <tr>
-<td>Agree to the terms and click Next
-</td>
-<td>
-<img src="images/InstallIR2.png" width="350"/>
-</td>
+<td width="60%">Agree to the terms and click Next</td>
+<td width="40%"><img src="images/InstallIR2.png" width="350"/></td>
 </tr>
 <tr>
-<td>Choose an install location (default is fine) and click Next
-</td>
-<td>
-<img src="images/InstallIR3.png" width="350"/>
+<td width="60%">Choose an install location (default is fine) and click Next</td>
+<td width="40%"><img src="images/InstallIR3.png" width="350"/>
 </td>
 </tr>
 <tr>
-<td>Click Install
+<td width="60%">Click Install
 </td>
-<td>
-<img src="images/InstallIR4.png" width="350"/>
-</td>
-</tr>
-<tr>
-<td>The installer will continue and install the software
-</td>
-<td>
-<img src="images/InstallIR5.png" width="350"/>
+<td width="40%"><img src="images/InstallIR4.png" width="350"/>
 </td>
 </tr>
 <tr>
-<td>Click Finish
-</td>
-<td>
-<img src="images/InstallIR6.png" width="350"/>
-</td>
+<td width="60%">The installer will continue and install the software</td>
+<td width="40%"><img src="images/InstallIR5.png" width="350"/></td>
 </tr>
 <tr>
-<td>The installer will then launch the configuration manager. Here you can register the integration runtime with your data factory
-</td>
-<td>
-<img src="images/RegisterIR1.png" width="350"/>
-</td>
+<td width="60%">Click Finish</td>
+<td width="40%"><img src="images/InstallIR6.png" width="350"/></td>
 </tr>
 <tr>
-<td>Browse to your data factory in the Azure Portal and click Author and Monitor
-</td>
-<td>
-<img src="images/RegisterIR2.png" width="350"/>
+<td width="60%">The installer will then launch the configuration manager. Here you can register the integration runtime with your data factory</td>
+<td width="40%"><img src="images/RegisterIR1.png" width="350"/></td>
+</tr>
+<tr>
+<td width="60%">Browse to your data factory in the Azure Portal and click Author and Monitor</td>
+<td width="40%"><img src="images/RegisterIR2.png" width="350"/>
 </td>
 </tr>
 
 <tr>
-<td>Next, click on the pencil icon on the left of the Data Factory screen to enter the designer. Next, click Connections at the bottom left of your screen and then Integration Runtimes. Click the New button
-</td>
-<td>
-<img src="images/RegisterIR3.png" width="350"/>
+<td width="60%">Next, click on the pencil icon on the left of the Data Factory screen to enter the designer. Next, click Connections at the bottom left of your screen and then Integration Runtimes. Click the New button</td>
+<td width="40%"><img src="images/RegisterIR3.png" width="350"/>
 </td>
 </tr>
 
 <tr>
-<td>Select "Perform data movement and dispatch activities to external computes." and click Next
-</td>
-<td>
-<img src="images/RegisterIR4.png" width="350"/>
-</td>
+<td width="60%">Select "Perform data movement and dispatch activities to external computes." and click Next</td>
+<td width="40%"><img src="images/RegisterIR4.png" width="350"/></td>
 </tr>
 
 <tr>
-<td>Select "Self Hosted" and click Next
-</td>
-<td>
-<img src="images/RegisterIR5.png" width="350"/>
+<td width="60%">Select "Self Hosted" and click Next</td>
+<td width="40%"><img src="images/RegisterIR5.png" width="350"/>
 </td>
 </tr>
 <tr>
-<td>Give the connection a name and description and then click Next
-</td>
-<td>
-<img src="images/RegisterIR6.png" width="350"/>
+<td width="60%">Give the connection a name and description and then click Next</td>
+<td width="40%"><img src="images/RegisterIR6.png" width="350"/>
 </td>
 </tr>
 <tr>
-<td>Copy one of the secure keys
-</td>
-<td>
-<img src="images/RegisterIR7.png" width="350"/>
-</td>
+<td width="60%">Copy one of the secure keys</td>
+<td width="40%"><img src="images/RegisterIR7.png" width="350"/></td>
 </tr>
 <tr>
-<td>Paste the key into the configuration manager window and click Register to complete setup
-</td>
-<td>
-<img src="images/RegisterIR8.png" width="350"/>
-</td>
+<td width="60%">Paste the key into the configuration manager window and click Register to complete setup</td>
+<td width="40%"><img src="images/RegisterIR8.png" width="350"/></td>
 </tr>
 <tr>
-<td>Once it's registered click Finish and close the remote desktop session
-</td>
-<td>
-<img src="images/RegisterIR9.png" width="350"/>
-</td>
+<td width="60%">Once it's registered click Finish and close the remote desktop session</td>
+<td width="40%"><img src="images/RegisterIR9.png" width="350"/></td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<img src="images/RegisterIR10.png" width="350"/>
-</td>
+<td width="60%"></td>
+<td width="40%"><img src="images/RegisterIR10.png" width="350"/></td>
 </tr>
 <tr>
-<td>Click refresh in the Azure Data Factory interface and ensure that the new connection shows as connected.
-</td>
-<td>
-<img src="images/RegisterIR11.png" width="550"/>
-</td>
+<td width="60%">Click refresh in the Azure Data Factory interface and ensure that the new connection shows as connected.</td>
+<td width="40%"><img src="images/RegisterIR11.png" width="550"/></td>
 </tr>
 </table>
 
@@ -192,27 +150,25 @@ Double click the installer then Choose your language and click Next
 ## Data Factory Connections
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Now we need to create two connections in Data Factory. One is for SQL Server, and the other is for Blob Storage. In your data factory go to the connections tab and select "linked Services" then click the New button.</td>
-<td><img src="images/AddConnections.png" /></td>
+<td width="60%">Now we need to create two connections in Data Factory. One is for SQL Server, and the other is for Blob Storage. In your data factory go to the connections tab and select "linked Services" then click the New button.</td>
+<td width="40%"><img src="images/AddConnections.png" /></td>
 </tr>
 <tr>
-<td>Now select Azure Blob Storage from the list and click Continue.</td>
-<td><img src="images/NewLinkedBlob.png" /></td>
+<td width="60%">Now select Azure Blob Storage from the list and click Continue.</td>
+<td width="40%"><img src="images/NewLinkedBlob.png" /></td>
 </tr>
 <tr>
-<td>Now select your subscription and storage account from the drop down lists. Name the linked service "AzureBlobStorage" then click Finish.</td>
-<td><img src="images/NewLinkedBlob2.png" /></td>
+<td width="60%">Now select your subscription and storage account from the drop down lists. Name the linked service "AzureBlobStorage" then click Finish.</td>
+<td width="40%"><img src="images/NewLinkedBlob2.png" /></td>
 </tr>
 <tr>
-<td>Now click New again and this time select SQL Server. There are several SQL options so make sure it's SQL Server you select.</td>
-<td><img src="images/NewLinkedSQL.png" /></td>
+<td width="60%">Now click New again and this time select SQL Server. There are several SQL options so make sure it's SQL Server you select.</td>
+<td width="40%"><img src="images/NewLinkedSQL.png" /></td>
 </tr>
 <tr>
-<td>Now fill in the name as SQLServer. Select IntegrationRuntime1 (the one you configured earlier). SQL01 is the server name of the SQL Server - this is the Windows network name not the name of the server in the Azure portal. The runtime uses this to contact the server on the network. The database name is "sales". Select Windows Authentication and type demogod and your password. Now click test to ensure this is working. Once successful, click Finish.</td>
-<td><img src="images/NewLinkedSQL2.png" /></td>
+<td width="60%">Now fill in the name as SQLServer. Select IntegrationRuntime1 (the one you configured earlier). SQL01 is the server name of the SQL Server - this is the Windows network name not the name of the server in the Azure portal. The runtime uses this to contact the server on the network. The database name is "sales". Select Windows Authentication and type demogod and your password. Now click test to ensure this is working. Once successful, click Finish.</td>
+<td width="40%"><img src="images/NewLinkedSQL2.png" /></td>
 </tr>
 </table>
 
@@ -230,43 +186,41 @@ Next we need to create data sets to reference the data in various locations and 
   * Order detail csv
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Click the plus sign and choose Dataset</td>
-<td><img src="images/AddDataset.png" /></td>
+<td width="60%">Click the plus sign and choose Dataset</td>
+<td width="40%"><img src="images/AddDataset.png" /></td>
 </tr>
 <tr>
-<td>Select Azure Blob Storage and click Continue</td>
-<td><img src="images/NewDatasetBlob.png" /></td>
+<td width="60%">Select Azure Blob Storage and click Continue</td>
+<td width="40%"><img src="images/NewDatasetBlob.png" /></td>
 </tr>
 <tr>
-<td>Select DelimitedText and click Continue</td>
-<td><img src="images/NewDatasetBlobCSV.png" /></td>
+<td width="60%">Select DelimitedText and click Continue</td>
+<td width="40%"><img src="images/NewDatasetBlobCSV.png" /></td>
 </tr>
 <tr>
-<td>Use the name DelimitedTextCustomers and select "AzureBlobStorage" as your linked service. set the file path to raw/customers. Tick "First row as header" and select None for schema. Click Continue</td>
-<td><img src="images/NewDatasetBlobCSVSettings.png" /></td>
+<td width="60%">Use the name DelimitedTextCustomers and select "AzureBlobStorage" as your linked service. set the file path to raw/customers. Tick "First row as header" and select None for schema. Click Continue</td>
+<td width="40%"><img src="images/NewDatasetBlobCSVSettings.png" /></td>
 </tr>
 <tr>
-<td>Repeat this process for OrderItems as below</td>
-<td><img src="images/NewDatasetBlobCSVSettings2.png" /></td>
+<td width="60%">Repeat this process for OrderItems as below</td>
+<td width="40%"><img src="images/NewDatasetBlobCSVSettings2.png" /></td>
 </tr>
 <tr>
-<td>Repeat again for Orders as below</td>
-<td><img src="images/NewDatasetBlobCSVSettings3.png" /></td>
+<td width="60%">Repeat again for Orders as below</td>
+<td width="40%"><img src="images/NewDatasetBlobCSVSettings3.png" /></td>
 </tr>
 <tr>
-<td>Now create a new dataset but choose SQL Server instead of Blob Storage. Use the drop down to select your SQL Server linked service, and then you can select the three tables, creating one dataset for each.</td>
-<td>
+<td width="60%">Now create a new dataset but choose SQL Server instead of Blob Storage. Use the drop down to select your SQL Server linked service, and then you can select the three tables, creating one dataset for each.</td>
+<td width="40%">
 <img src="images/NewDatasetSQLSettings.png" />
 <img src="images/NewDatasetSQLSettings2.png" />
 <img src="images/NewDatasetSQLSettings3.png" />
 </td>
 </tr>
 <tr>
-<td>Now click "Publish All" to save your work. You should have 6 datasets as shown here. You may also want to use folders to organise them in the interface</td>
-<td><img src="images/datasets.png" /></td>
+<td width="60%">Now click "Publish All" to save your work. You should have 6 datasets as shown here. You may also want to use folders to organise them in the interface</td>
+<td width="40%"><img src="images/datasets.png" /></td>
 </tr>
 </table>
 
@@ -275,23 +229,21 @@ If you click on one of your delimited text datasets you can see on the connectio
 ## Data Factory Pipeline
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Now click the add button and choose pipeline. Name the pipeline "PipelineDataCopy"</td>
-<td><img src="images/NewPipeline.png" /></td>
+<td width="60%">Now click the add button and choose pipeline. Name the pipeline "PipelineDataCopy"</td>
+<td width="40%"><img src="images/NewPipeline.png" /></td>
 </tr>
 <tr>
-<td>Now click on the parameters tab and add two parameters, runStartTime and runEndTime. Leave both blank.</td>
-<td><img src="images/NewPipelineParams.png" /></td>
+<td width="60%">Now click on the parameters tab and add two parameters, runStartTime and runEndTime. Leave both blank.</td>
+<td width="40%"><img src="images/NewPipelineParams.png" /></td>
 </tr>
 <tr>
-<td>Now, expand "Move and Transform" on the menu and drag a copy data job onto the canvas. Repeat this three times.</td>
-<td><img src="images/NewCopyJob.png" /></td>
+<td width="60%">Now, expand "Move and Transform" on the menu and drag a copy data job onto the canvas. Repeat this three times.</td>
+<td width="40%"><img src="images/NewCopyJob.png" /></td>
 </tr>
 <tr>
-<td>On the general tab for each job, rename them to CopyCustomers, CopyOrderItems and CopyOrders</td>
-<td><img src="images/NewCopyJobGeneral.png" /></td>
+<td width="60%">On the general tab for each job, rename them to CopyCustomers, CopyOrderItems and CopyOrders</td>
+<td width="40%"><img src="images/NewCopyJobGeneral.png" /></td>
 </tr>
 </table>
 
@@ -315,25 +267,23 @@ Copy in the following query text. You may need to alter this if your parameter n
 ```
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>&nbsp;</td>
-<td><img src="images/NewCopyJobQuery.png" /></td>
+<td width="60%">&nbsp;</td>
+<td width="40%"><img src="images/NewCopyJobQuery.png" /></td>
 </tr>
 <tr>
-<td>Next, click on the Sink tab and click edit next to the dataset. Go to the Parameters tab and create one parameter called runStartTime and leave the value blank. This will be used to name the file with the run start date so that we get a unique file name per file.</td>
-<td><img src="images/datasetparameters.png" /></td>
+<td width="60%">Next, click on the Sink tab and click edit next to the dataset. Go to the Parameters tab and create one parameter called runStartTime and leave the value blank. This will be used to name the file with the run start date so that we get a unique file name per file.</td>
+<td width="40%"><img src="images/datasetparameters.png" /></td>
 </tr>
 <tr>
-<td>Click the Connection tab and then in the file box and select add dynamic content. Here paste in `@concat(formatDateTime(dataset().runStartTime, 'yyyy-MM-dd'), '.csv')` and click finish. This will create the file name with the date and a .csv extension.</td>
-<td><img src="images/datasetFileName.png" />
+<td width="60%">Click the Connection tab and then in the file box and select add dynamic content. Here paste in `@concat(formatDateTime(dataset().runStartTime, 'yyyy-MM-dd'), '.csv')` and click finish. This will create the file name with the date and a .csv extension.</td>
+<td width="40%"><img src="images/datasetFileName.png" />
 <img src="images/datasetFileName2.png" />
 </td>
 </tr>
 <tr>
-<td>Now click back to the copy job and you'll see you now have an empty box for the parameter of the dataset. Click here and choose runStartTime from the list of parameters in the dynamic content pane. This will pass the value from the pipeline parameter to the dataset parameter when the job runs.</td>
-<td><img src="images/copyJobParam.png" /></td>
+<td width="60%">Now click back to the copy job and you'll see you now have an empty box for the parameter of the dataset. Click here and choose runStartTime from the list of parameters in the dynamic content pane. This will pass the value from the pipeline parameter to the dataset parameter when the job runs.</td>
+<td width="40%"><img src="images/copyJobParam.png" /></td>
 </tr>
 </table>
 
@@ -342,27 +292,25 @@ Click Publish All to save your work.
 ## Trigger
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Finally, we need to create a trigger and run the job. From the pipeline canvas, click Add Trigger and then New/Edit on the menu.</td>
-<td><img src="images/newTrigger.png" /></td>
+<td width="60%">Finally, we need to create a trigger and run the job. From the pipeline canvas, click Add Trigger and then New/Edit on the menu.</td>
+<td width="40%"><img src="images/newTrigger.png" /></td>
 </tr>
 <tr>
-<td>Click choose trigger then select new  on the drop down box.</td>
-<td><img src="images/newTrigger2.png" /></td>
+<td width="60%">Click choose trigger then select new  on the drop down box.</td>
+<td width="40%"><img src="images/newTrigger2.png" /></td>
 </tr>
 <tr>
-<td>Name the trigger TriggerTumblingWindow and then select "Tumbling Window" under Type. This will create one run for each time period we specify going back to the start date. Each has a start and end time which will be used in the SQL query above. This is useful because we can wipe the data lake at any point and re-collect the data if needed. We can also re-run any job if data changes and it will only affect that data. Select 1st July 2018 12:00AM as the start date and 31st December 2020 11:59PM as the end date. Use 24 hours as the recurrance. This means that each file generated will contain the orders for a 24 hour period.</td>
-<td><img src="images/newTrigger3.png" /></td>
+<td width="60%">Name the trigger TriggerTumblingWindow and then select "Tumbling Window" under Type. This will create one run for each time period we specify going back to the start date. Each has a start and end time which will be used in the SQL query above. This is useful because we can wipe the data lake at any point and re-collect the data if needed. We can also re-run any job if data changes and it will only affect that data. Select 1st July 2018 12:00AM as the start date and 31st December 2020 11:59PM as the end date. Use 24 hours as the recurrance. This means that each file generated will contain the orders for a 24 hour period.</td>
+<td width="40%"><img src="images/newTrigger3.png" /></td>
 </tr>
 <tr>
-<td>Click Next and enter the following in the parameter value boxes. These will take the window start and end times and put them in the parameters we used previously.
+<td width="60%">Click Next and enter the following in the parameter value boxes. These will take the window start and end times and put them in the parameters we used previously.
 
 runStartTime - `@formatDateTime(trigger().outputs.windowStartTime, 'yyyy-MM-dd HH:mm:ss')`
 
 runEndTime - `@formatDateTime(trigger().outputs.windowEndTime, 'yyyy-MM-dd HH:mm:ss')`</td>
-<td><img src="images/newTrigger4.png" /></td>
+<td width="40%"><img src="images/newTrigger4.png" /></td>
 </tr>
 </table>
 
@@ -371,11 +319,9 @@ Click Finish and then Publish All to save your work. This time, that will also t
 ## Monitor
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Click monitor to see the jobs which have been created. You'll start to see them turn green and completed rather than amber and in progress as they run. You will also start to see files appear in your blob storage containers.</td>
-<td><img src="images/monitor.png" />
+<td width="60%">Click monitor to see the jobs which have been created. You'll start to see them turn green and completed rather than amber and in progress as they run. You will also start to see files appear in your blob storage containers.</td>
+<td width="40%"><img src="images/monitor.png" />
 <img src="images/blobs.png" /></td>
 </tr>
 </table>

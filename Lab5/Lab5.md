@@ -17,88 +17,82 @@ Download the weather data from [here](https://github.com/davedoesdemos/DataLakeI
 ### Blob Storage
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Open Power BI Desktop and create a new empty file. Click "Get Data" on the menu and select Azure Blob Storage from the list then press connect</td>
-<td><img src="images/blob.png" /></td>
+<td width="60%">Open Power BI Desktop and create a new empty file. Click "Get Data" on the menu and select Azure Blob Storage from the list then press connect</td>
+<td width="40%"><img src="images/blob.png" /></td>
 </tr>
 <tr>
-<td>In the Azure Portal, browse to your storage account and then click properties on the menu. Copy the "Primary Blob Service Endpoint" field</td>
-<td><img src="images/endpoint.png" /></td>
+<td width="60%">In the Azure Portal, browse to your storage account and then click properties on the menu. Copy the "Primary Blob Service Endpoint" field</td>
+<td width="40%"><img src="images/endpoint.png" /></td>
 </tr>
 <tr>
-<td>Paste this url into the Power BI dialog box then click ok</td>
-<td><img src="images/endpoint2.png" /></td>
+<td width="60%">Paste this url into the Power BI dialog box then click ok</td>
+<td width="40%"><img src="images/endpoint2.png" /></td>
 </tr>
 <tr>
-<td>In the Azure Portal click on Access Keys and copy one of your storage account access keys</td>
-<td><img src="images/accesskeys.png" /></td>
+<td width="60%">In the Azure Portal click on Access Keys and copy one of your storage account access keys</td>
+<td width="40%"><img src="images/accesskeys.png" /></td>
 </tr>
 <tr>
-<td>Paste this in to Power BI and click next
+<td width="60%">Paste this in to Power BI and click next
 
 Use the navigator to select the model container and click Load</td>
-<td><img src="images/navigator.png" /></td>
+<td width="40%"><img src="images/navigator.png" /></td>
 </tr>
 <tr>
-<td>In Power BI click the model button on the left and then Edit Queries on the menu</td>
-<td><img src="images/model.png" /></td>
+<td width="60%">In Power BI click the model button on the left and then Edit Queries on the menu</td>
+<td width="40%"><img src="images/model.png" /></td>
 </tr>
 <tr>
-<td>In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create 6 copies of the model. We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
-<td><img src="images/copies.png" /></td>
+<td width="60%">In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create 6 copies of the model. We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
+<td width="40%"><img src="images/copies.png" /></td>
 </tr>
 <tr>
-<td>Now on each of the copies of the model, click the yellow "Binary" text on the lines containing .csv in the extension column. This will expand out a single file in your data model. Rename the model to the same as the file so that you can identify what data is where.</td>
-<td><img src="images/expand.png" /></td>
+<td width="60%">Now on each of the copies of the model, click the yellow "Binary" text on the lines containing .csv in the extension column. This will expand out a single file in your data model. Rename the model to the same as the file so that you can identify what data is where.</td>
+<td width="40%"><img src="images/expand.png" /></td>
 </tr>
 <tr>
-<td>You should end up with a list as below</td>
-<td><img src="images/allmodels.png" /></td>
+<td width="60%">You should end up with a list as below</td>
+<td width="40%"><img src="images/allmodels.png" /></td>
 </tr>
 </table>
 
 ### SQL DW
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Next, click New source and select Azure SQL Data Warehouse.</td>
-<td><img src="images/sqldw.png" /></td>
+<td width="60%">Next, click New source and select Azure SQL Data Warehouse.</td>
+<td width="40%"><img src="images/sqldw.png" /></td>
 </tr>
 <tr>
-<td>In the Azure portal, browse to your SQL data warehouse (DW01) and copy the Server Name from the overview page. Paste this into the Power BI dialog, and enter DW01 as the database. Select Direct Query and click OK.</td>
-<td><img src="images/dwConnection.png" /></td>
+<td width="60%">In the Azure portal, browse to your SQL data warehouse (DW01) and copy the Server Name from the overview page. Paste this into the Power BI dialog, and enter DW01 as the database. Select Direct Query and click OK.</td>
+<td width="40%"><img src="images/dwConnection.png" /></td>
 </tr>
 <tr>
-<td>Enter the credentials for **demogod** and click connect</td>
-<td><img src="images/credentials.png" /></td>
+<td width="60%">Enter the credentials for **demogod** and click connect</td>
+<td width="40%"><img src="images/credentials.png" /></td>
 </tr>
 <tr>
-<td>Select the orders table and click OK</td>
-<td><img src="images/ordersTable.png" /></td>
+<td width="60%">Select the orders table and click OK</td>
+<td width="40%"><img src="images/ordersTable.png" /></td>
 </tr>
 <tr>
-<td>Click close and apply on the menu</td>
-<td><img src="images/closeandapply.png" /></td>
+<td width="60%">Click close and apply on the menu</td>
+<td width="40%"><img src="images/closeandapply.png" /></td>
 </tr>
 </table>
 
 ### Modeling
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Click on the orders table and then the total column. Set the data type to Decimal Number and currency. </td>
-<td><img src="images/columntype.png" /></td>
+<td width="60%">Click on the orders table and then the total column. Set the data type to Decimal Number and currency. </td>
+<td width="40%"><img src="images/columntype.png" /></td>
 </tr>
 <tr>
-<td>Repeat this to set quantity to whole number, and price each to decimal number and currency.
+<td width="60%">Repeat this to set quantity to whole number, and price each to decimal number and currency.
 Next, click on aggrItemDate and then click "is hidden" in the properties pane</td>
-<td><img src="images/hidden.png" /></td>
+<td width="40%"><img src="images/hidden.png" /></td>
 </tr>
 </table>
 
@@ -116,44 +110,40 @@ Next, create the following relationships:
 | AggrItemDate | item | Many | One | item | Items |
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Next, click on the aggrCityDate ellipsis menu and select Manage Aggregations. Set the aggregations as below:</td>
-<td><img src="images/aggregations.png" /></td>
+<td width="60%">Next, click on the aggrCityDate ellipsis menu and select Manage Aggregations. Set the aggregations as below:</td>
+<td width="40%"><img src="images/aggregations.png" /></td>
 </tr>
 <tr>
-<td>Click on aggrItemDate and set the aggregations as below:</td>
-<td><img src="images/aggregations2.png" /></td>
+<td width="60%">Click on aggrItemDate and set the aggregations as below:</td>
+<td width="40%"><img src="images/aggregations2.png" /></td>
 </tr>
 </table>
 
 ### Report
 
 <table>
-<col width="60%" />
-<col width="40%" />
 <tr>
-<td>Go to the report tab in Power BI and add a matrix visualisation. From the orders table, drag City, date and order_id to the Rows box and then Item to the Values box, then set the values to count of item</td>
-<td><img src="images/Matrix1.png" /></td>
+<td width="60%">Go to the report tab in Power BI and add a matrix visualisation. From the orders table, drag City, date and order_id to the Rows box and then Item to the Values box, then set the values to count of item</td>
+<td width="40%"><img src="images/Matrix1.png" /></td>
 </tr>
 <tr>
-<td>On the report, right click a city and select Drill Down</td>
-<td><img src="images/drilldown.png" /></td>
+<td width="60%">On the report, right click a city and select Drill Down</td>
+<td width="40%"><img src="images/drilldown.png" /></td>
 </tr>
 <tr>
-<td>You'll then see the next level of detail. If you look in the query log of SQL Data Warehouse, you won't see any query at this point since all data has come from our aggregations.
+<td width="60%">You'll then see the next level of detail. If you look in the query log of SQL Data Warehouse, you won't see any query at this point since all data has come from our aggregations.
 
 If you now drill down to a row which shows a large number of items, Power BI is forced to expand out with a query to the fact table and so will send a query to SQL Data Warehouse. </td>
-<td><img src="images/drilldown2.png" /></td>
+<td width="40%"><img src="images/drilldown2.png" /></td>
 </tr>
 <tr>
-<td>You may need to sort queries by start time in the monitoring pane</td>
-<td><img src="images/queryLog.png" /></td>
+<td width="60%">You may need to sort queries by start time in the monitoring pane</td>
+<td width="40%"><img src="images/queryLog.png" /></td>
 </tr>
 <tr>
-<td>Now, add in temperature from the weather table and set to "average of temperature" in the Values box for the matrix.</td>
-<td><img src="images/addTemp.png" /></td>
+<td width="60%">Now, add in temperature from the weather table and set to "average of temperature" in the Values box for the matrix.</td>
+<td width="40%"><img src="images/addTemp.png" /></td>
 </tr>
 </table>
 
