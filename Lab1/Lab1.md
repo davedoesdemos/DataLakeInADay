@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This lab is now available as videos for [setting up the infrastructure](https://youtu.be/BptCJJeSNaA) and [ingesting the data](https://youtu.be/tDvNjbbbASY)
+
 During this lab we will deploy the infrastructure as shown below. This includes a pretend data centre with database server on a network, behind a firewall.
 
 ![Infrastructure.png](images/Infrastructure.png)

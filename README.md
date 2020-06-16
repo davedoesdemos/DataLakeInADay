@@ -44,15 +44,15 @@ Resources to support running this workshop smoothly. These include suggested tim
 
 These sessions are informational presentations which can be used during the day to give context to the labs and explain more about data lakes and where they fit in the broader IT ecosystem.
 
-* [Session 1 - Data Platform Overview and Options](Session1/Session1.md)
-* [Session 2 - Organising a Data Lake](Session2/Session2.md)
+* [Session 1 - Data Platform Overview and Options](Session1/Session1.md) [video](https://youtu.be/vVvb1muzQZA)
+* [Session 2 - Organising a Data Lake](Session2/Session2.md) [video](https://youtu.be/gRaj7gYSi3A)
 * [Session 3 - The Wider Ecosystem](Session3/Session3.md)
 
 # Infrastructure
 
 Details about the infrastructure we deploy for the labs, as well as instructions on how to deploy it. This includes automated deployment and username information.
 
-* [Set up your infrastructure](infrastructure/readme.md)
+* [Set up your infrastructure](infrastructure/readme.md) [video](https://youtu.be/BptCJJeSNaA)
 
 Please deploy to the East US region, and use "Password123$" as your password.
 
@@ -64,8 +64,8 @@ Please deploy to the East US region, and use "Password123$" as your password.
 
 The labs build to a data lake reporting solution with multiple data sources. Here we will show how data can be collected from the Internet and merged with data from an internal Sales database. We will then process this information and create reports based on the data.
 
-* [Lab 1 - Getting Internal data with Azure Data Factory and the integration Runtime](Lab1/Lab1.md)
-* [Lab 2 - Getting external data using Logic App](Lab2/Lab2.md)
+* [Lab 1 - Getting Internal data with Azure Data Factory and the integration Runtime](Lab1/Lab1.md) [video](https://youtu.be/tDvNjbbbASY)
+* [Lab 2 - Getting external data using Logic App](Lab2/Lab2.md) [video](https://youtu.be/mw6KK5tun0Y)
 * [Lab 3 - Processing Data using Mapping Data Flows](Lab3b/Lab3b.md)
 * [Lab 4 - Load data into SQL DW](Lab4/Lab4.md)
 * [Lab 5 - Load into Power BI](Lab5/Lab5.md)
