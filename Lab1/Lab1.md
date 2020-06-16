@@ -50,6 +50,8 @@ Select Private (no anonymous access) and give the container a name of "raw". Cli
 ## Self Hosted Integration Runtime
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>
 Log into the integration runtime server (ir-*uniquestring*) using the username **demogod** and your password.
@@ -190,6 +192,8 @@ Double click the installer then Choose your language and click Next
 ## Data Factory Connections
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>Now we need to create two connections in Data Factory. One is for SQL Server, and the other is for Blob Storage. In your data factory go to the connections tab and select "linked Services" then click the New button.</td>
 <td><img src="images/AddConnections.png" /></td>
@@ -226,6 +230,8 @@ Next we need to create data sets to reference the data in various locations and 
   * Order detail csv
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>Click the plus sign and choose Dataset</td>
 <td><img src="images/AddDataset.png" /></td>
@@ -269,6 +275,8 @@ If you click on one of your delimited text datasets you can see on the connectio
 ## Data Factory Pipeline
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>Now click the add button and choose pipeline. Name the pipeline "PipelineDataCopy"</td>
 <td><img src="images/NewPipeline.png" /></td>
@@ -307,6 +315,8 @@ Copy in the following query text. You may need to alter this if your parameter n
 ```
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>&nbsp;</td>
 <td><img src="images/NewCopyJobQuery.png" /></td>
@@ -332,6 +342,8 @@ Click Publish All to save your work.
 ## Trigger
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>Finally, we need to create a trigger and run the job. From the pipeline canvas, click Add Trigger and then New/Edit on the menu.</td>
 <td><img src="images/newTrigger.png" /></td>
@@ -359,6 +371,8 @@ Click Finish and then Publish All to save your work. This time, that will also t
 ## Monitor
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>Click monitor to see the jobs which have been created. You'll start to see them turn green and completed rather than amber and in progress as they run. You will also start to see files appear in your blob storage containers.</td>
 <td><img src="images/monitor.png" />

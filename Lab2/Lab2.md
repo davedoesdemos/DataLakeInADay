@@ -16,6 +16,8 @@ For a look at the completed Logic App flow, scroll to the bottom of these instru
 ## Weather Data Account
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>Head to <a href="https://openweathermap.org">openweathermap.org</a> and sign up for API access. This will give you an API key to use when requesting data. The service is free up to certain traffic limits which we won’t hit if using it for daily updates on a small number of cities. 
 You’ll need the key from this box later.</td>
@@ -26,6 +28,8 @@ You’ll need the key from this box later.</td>
 ## Logic App
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>To begin, open the Logic App in your resource group. Click on to the Logic App Designer to begin creating the app. Add a recurrence trigger to the app first. This will fire once a day to collect weather data.</td>
 <td><img src="images/3.Recurrence.png" /></td>
@@ -47,6 +51,8 @@ Name the variable "cities" and choose an array type. Add the below JSON to the v
 ```
 
 <table>
+<col width=60% />
+<col width=40% />
 <tr>
 <td>Now, create a for each loop action after your variable action. This will iterate through the array we just created, one city at a time.</td>
 <td><img src="images/5.ForEach.png" /></td>
