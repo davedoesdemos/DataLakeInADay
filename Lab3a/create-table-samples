@@ -1,0 +1,19 @@
+%sql
+
+-- simple create table statement assumes you have data in Delta Lake format at the specified location
+CREATE TABLE events
+  USING DELTA
+  LOCATION '/mnt/mount-name/path-to-folder-containing-Delta-Lake-data'
+
+-- create table from csv with multi line columns which contain  enclosed in quotes 
+CREATE TABLE IF NOT EXISTS table_name_goes_here 
+USING CSV 
+OPTIONS ( 
+header "true", 
+delimiter ",", 
+quote 'quote-characters-go-here',
+escape 'escape-characters-go-here',
+mode 'FAILFAST',
+multiLine 'TRUE',
+inferSchema "true", 
+path "/mnt/mout-name/path-to-csv.csv")
