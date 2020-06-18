@@ -85,8 +85,16 @@ Once we have the fact table, we will then create some aggregation tables with th
 <td width="40%"><img src="images/sink.png" /></td>
 </tr>
 <tr>
+<td width="60%">Click on the optimize tab and choose single partition since we're outputting to a single file. This makes the task run on one compute node and we're doing this step to keep the demo simple. For very large data sets we'd do this differently in order to parallelise the task accross the cluster</td>
+<td width="40%"><img src="images/optimizeTab.png" /></td>
+</tr>
+<tr>
 <td width="60%">Now click the settings tab and choose "Clear the folder", "Output to single file", and enter "cities.csv" as the name. This will ensure that each time the job runs we have a single file with all of the city data.</td>
 <td width="40%"><img src="images/sink2.png" /></td>
+</tr>
+<tr>
+<td width="60%">Click on the optimize tab and choose single partition since we're outputting to a single file. This makes the task run on one compute node and we're doing this step to keep the demo simple. For very large data sets we'd do this differently in order to parallelise the task accross the cluster</td>
+<td width="40%"><img src="images/optimizeTab.png" /></td>
 </tr>
 <tr>
 <td width="60%">Now, click the plus next to customers and add a sink activity called sinkCustomers. As above, add a dataset in /model/customers and name the output file customers.csv. This job will simply copy the whole customer table as-is into our model directory for consumption.</td>
