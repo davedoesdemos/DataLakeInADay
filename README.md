@@ -67,6 +67,6 @@ The labs build to a data lake reporting solution with multiple data sources. Her
 * [Lab 1 - Getting Internal data with Azure Data Factory and the integration Runtime](Lab1/Lab1.md) ([video](https://youtu.be/tDvNjbbbASY))
 * [Lab 2 - Getting external data using Logic App](Lab2/Lab2.md) ([video](https://youtu.be/mw6KK5tun0Y))
 * [Lab 3 - Processing Data using Mapping Data Flows](Lab3b/Lab3b.md) ([video](https://youtu.be/U6CsAuRg9us))
-  * [Optional alternative lab 3 with Databricks](Lab3a/Lab3a.md) ([video](https://youtu.be/uzqFsZv2sCI))
-* [Lab 4 - Load data into SQL DW](Lab4/Lab4.md)
+  * [Optional alternative lab 3 with Databricks](Lab3a/Lab3a.md)
+* [Lab 4 - Load data into SQL DW](Lab4/Lab4.md) ([video](https://youtu.be/uzqFsZv2sCI))
 * [Lab 5 - Load into Power BI](Lab5/Lab5.md)
