@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This lab is now available as a [video](https://youtu.be/uzqFsZv2sCI)
+
 In this lab, we will copy some data into an Azure SQL Data Warehouse database to be used from Power BI. Using a SQL Data Warehouse will make the data more flexible since queries can be run in the database engine. It also scales very well for larger data sets, and allows more fine grained control of the data. In this lab we'll just load some data to show it as part of a data lake process. SQL Data Warehouse in detail is out of the scope of these labs.
 
 ![architecture.png](images/architecture.png)

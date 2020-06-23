@@ -2,6 +2,8 @@
 
 ## Introduction
 
+This lab is now available as a [video](https://youtu.be/U6CsAuRg9us)
+
 In this lab we will transform some of our data. The setup is shown below, with Data Factory using data flows to transparently process data using Databricks behind the scenes. 
 
 ![architecture.png](images/architecture.png)
