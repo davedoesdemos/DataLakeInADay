@@ -119,8 +119,12 @@ Next, create the following relationships:
 <td width="40%"><img src="images/newRelationship.png" /></td>
 </tr>
 <tr>
-<td width="60%">Fill in the tables and cardinality, ensuring you select the correct columns. You can also drag and drop columns in the main designer interface if you are more comfortable with that method. Repeat for all relationships as in the table above</td>
+<td width="60%">Fill in the tables and cardinality, ensuring you select the correct columns.</td>
 <td width="40%"><img src="images/newRelationship.png" /></td>
+</tr>
+<tr>
+<td width="60%">You can also drag and drop columns in the main designer interface if you are more comfortable with that method. Repeat for all relationships as in the table above</td>
+<td width="40%"><img src="images/completedRelationships.png" /></td>
 </tr>
 <tr>
 <td width="60%">Next, click on the aggrCityDate ellipsis menu and select Manage Aggregations. Set the aggregations as below:</td>
