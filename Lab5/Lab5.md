@@ -40,15 +40,15 @@ Use the navigator to select the model container and click Load</td>
 <td width="40%"><img src="images/navigator.png" /></td>
 </tr>
 <tr>
-<td width="60%">In Power BI click the model button on the left and then Edit Queries on the menu</td>
+<td width="60%">In Power BI click the model button on the left and then transform data on the menu</td>
 <td width="40%"><img src="images/model.png" /></td>
 </tr>
 <tr>
-<td width="60%">In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create 6 copies of the model. We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
+<td width="60%">In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create a total of 7 copies of the model. We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
 <td width="40%"><img src="images/copies.png" /></td>
 </tr>
 <tr>
-<td width="60%">Now on each of the copies of the model, click the yellow "Binary" text on the lines containing .csv in the extension column. This will expand out a single file in your data model. Rename the model to the same as the file so that you can identify what data is where.</td>
+<td width="60%">Now for each of the copies of the model, click the yellow "Binary" text on one of the lines containing .csv in the extension column. This will expand out a single file in your data model. Rename the model to the same as the file so that you can identify what data is where.</td>
 <td width="40%"><img src="images/expand.png" /></td>
 </tr>
 <tr>
@@ -91,7 +91,7 @@ Use the navigator to select the model container and click Load</td>
 </tr>
 <tr>
 <td width="60%">Repeat this to set quantity to whole number, and price each to decimal number and currency.
-Next, click on aggrItemDate and then click "is hidden" in the properties pane</td>
+Next, click on aggrCityDate and then click "is hidden" in the properties pane</td>
 <td width="40%"><img src="images/hidden.png" /></td>
 </tr>
 </table>
@@ -110,6 +110,18 @@ Next, create the following relationships:
 | AggrItemDate | item | Many | One | item | Items |
 
 <table>
+<tr>
+<td width="60%">To do this, click on the Manage Relationships button on the menu</td>
+<td width="40%"><img src="images/relationships.png" /></td>
+</tr>
+<tr>
+<td width="60%">Then click New...</td>
+<td width="40%"><img src="images/newRelationship.png" /></td>
+</tr>
+<tr>
+<td width="60%">Fill in the tables and cardinality, ensuring you select the correct columns. You can also drag and drop columns in the main designer interface if you are more comfortable with that method. Repeat for all relationships as in the table above</td>
+<td width="40%"><img src="images/newRelationship.png" /></td>
+</tr>
 <tr>
 <td width="60%">Next, click on the aggrCityDate ellipsis menu and select Manage Aggregations. Set the aggregations as below:</td>
 <td width="40%"><img src="images/aggregations.png" /></td>
