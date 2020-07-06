@@ -44,7 +44,7 @@ Use the navigator to select the model container and click Load</td>
 <td width="40%"><img src="images/model.png" /></td>
 </tr>
 <tr>
-<td width="60%">In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create a total of 7 copies of the model. We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
+<td width="60%">In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create a total of 6 copies of the model. We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
 <td width="40%"><img src="images/copies.png" /></td>
 </tr>
 <tr>
