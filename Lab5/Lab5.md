@@ -44,7 +44,7 @@ Use the navigator to select the model container and click Load</td>
 <td width="40%"><img src="images/model.png" /></td>
 </tr>
 <tr>
-<td width="60%">In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create a total of 6 copies of the model. We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
+<td width="60%">In the query editor, right click "model" and copy. Right click model again and click Paste. Do this to create a total of 6 copies of the model (including the original). We will expand each one into a single table with the exception of the orders fact table, which we'll get from SQL Data Warehouse.</td>
 <td width="40%"><img src="images/copies.png" /></td>
 </tr>
 <tr>
@@ -52,7 +52,7 @@ Use the navigator to select the model container and click Load</td>
 <td width="40%"><img src="images/expand.png" /></td>
 </tr>
 <tr>
-<td width="60%">You should end up with a list as below</td>
+<td width="60%">You should end up with a list as in this image</td>
 <td width="40%"><img src="images/allmodels.png" /></td>
 </tr>
 </table>
@@ -80,13 +80,25 @@ Use the navigator to select the model container and click Load</td>
 <td width="60%">Click close and apply on the menu</td>
 <td width="40%"><img src="images/closeandapply.png" /></td>
 </tr>
+<tr>
+<td width="60%">Next, we need to create a date table. Click on the data tab in Power BI and choose New Table</td>
+<td width="40%"><img src="images/newTable.png" /></td>
+</tr>
+<tr>
+<td width="60%">Name the table Dates and type `Dates = CALENDARAUTO()` to create a date column containing all of the dates within the data model.</td>
+<td width="40%"><img src="images/dateTable.png" /></td>
+</tr>
+<tr>
+<td width="60%">Set the date format to YYYY-MM-DD or your local equivelant, to remove the time from the display</td>
+<td width="40%"><img src="images/dateColumn.png" /></td>
+</tr>
 </table>
 
 ### Modeling
 
 <table>
 <tr>
-<td width="60%">Click on the orders table and then the total column. Set the data type to Decimal Number and currency. </td>
+<td width="60%">First we need to correct a few data types. Click on the orders table and then the total column. Set the data type to Decimal Number and currency. </td>
 <td width="40%"><img src="images/columntype.png" /></td>
 </tr>
 <tr>
@@ -102,10 +114,12 @@ Next, create the following relationships:
 
 | Table 1 | Column 1 | Cardinality 1 | Cardinality 2 | Column 2 | Table 2 |
 |---------|----------|---------------|---------------|----------|---------|
-| Weather | City | Many | Many | City | Orders |
-| Items | Item | One | Many | item | Orders |
-| Customers | customer_id | One | Many | customer_id | Orders |
+| Weather | City | Many | One | City | Cities |
+| Weather | Date | Many | One | Date | Dates |
 | Customers | city | Many | One | City | Cities |
+| Customers | customer_id | One | Many | customer_id | Orders |
+| Orders | Date | Many | One | Date | Dates |
+| Items | Item | One | Many | item | Orders |
 | Cities | city | One | Many | city | aggrCityDate |
 | AggrItemDate | item | Many | One | item | Items |
 
@@ -161,6 +175,10 @@ If you now drill down to a row which shows a large number of items, Power BI is 
 <td width="60%">Now, add in temperature from the weather table and set to "average of temperature" in the Values box for the matrix.</td>
 <td width="40%"><img src="images/addTemp.png" /></td>
 </tr>
+<tr>
+<td width="60%">You'll now be able to see the weather information we collected from the Internet as you drill down for the city. This demonstrates how simple it is to bring in external data sources and merge with your own information, regardless of scale or size.</td>
+<td width="40%"><img src="images/temperature.png" /></td>
+</tr>
 </table>
 
-You'll now be able to see the weather information we collected from the Internet as you drill down for the city. This demonstrates how simple it is to bring in external data sources and merge with your own information, regardless of scale or size.
+This concludes the Data Lake in a Day workshop, thanks for your participation.
